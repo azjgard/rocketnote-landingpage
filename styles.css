@@ -1,3 +1,17 @@
+#feature-1 {
+	padding-top: 400px;
+	margin-top: -400px;
+}
+
+#feature-1,
+#feature-2 {
+	background-color: #efefef
+}
+
+#cta-3 {
+	padding: 50px 0;
+}
+
 #footer-2 {
 	padding: 20px 0;
 }
@@ -36,4 +50,22 @@
 
 .section.red-white a {
 	color: #4791df;
+}
+
+code {
+	background-color: #e6e6e6;
+	border-radius: 3px;
+	color: #4791df;
+	padding: 0 5px;
+}
+
+@media (max-width: 768px) {
+	#feature-1 {
+		padding-top: 50px;
+		margin-top: 0;
+	}
+
+	.browser {
+		display: none;
+	}
 }
