@@ -10,6 +10,28 @@
 
 	<link rel="stylesheet" href="https://www.launchaco.com/static/AllTemplates.min.css">
 	<link rel="stylesheet" href="styles.css">
+	<!-- start ConvertFox JS code-->
+	<script>
+		(function (d, h, w) {
+			var convertfox = w.convertfox = w.convertfox || [];
+			convertfox.methods = ['trackPageView', 'identify', 'track', 'setAppId'];
+			convertfox.factory = function (t) {
+				return function () {
+					var e = Array.prototype.slice.call(arguments);
+					e.unshift(t);
+					convertfox.push(e);
+					return convertfox;
+				}
+			};
+			for (var i = 0; i < convertfox.methods.length; i++) {
+				var c = convertfox.methods[i];
+				convertfox[c] = convertfox.factory(c)
+			}
+			s = d.createElement('script'), s.src = "//d3sjgucddk68ji.cloudfront.net/convertfox.min.js", s.async = !0, e = d.getElementsByTagName(h)[0], e.appendChild(s), s.addEventListener('load', function (e) {
+			}, !1), convertfox.setAppId("z3gf6leb"), convertfox.trackPageView()
+		})(document, 'head', window);
+	</script>
+	<!-- end ConvertFox JS code-->
 </head>
 
 <body class="font-modern">
@@ -63,7 +85,7 @@
 					How do I download Rocket Note?
 				</b>
 				<p class="paragraph secondary-color ">
-					The easy way is to click "Add To Chrome" on our home page. Otherwise, feel free to search on the Chrome app store.
+					The easy way is to click "Add To Chrome" on <a href="./">our home page</a>. Otherwise, feel free to search on the Chrome app store.
 				</p>
 			</div>
 			<div class="faq pad20">
@@ -72,6 +94,14 @@
 				</b>
 				<p class="paragraph secondary-color ">
 					We sure do! For a full list of shortcuts, see our complete <a href="./keyboard-shortcuts">Keyboard Shortcuts</a> page.
+				</p>
+			</div>
+			<div class="faq pad20">
+				<b class="bold primary-color ">
+					It's not working... Does that count as a question?
+				</b>
+				<p class="paragraph secondary-color ">
+					We don't just claim to have amazing customer service. Put us to the test by <a href="javascript:void(0);" onclick="convertfox.chat('show')">starting a chat</a> with a member of our support staff!
 				</p>
 			</div>
 			<div class="faq pad20">
