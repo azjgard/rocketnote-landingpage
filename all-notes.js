@@ -5,7 +5,7 @@
 		chrome.runtime.sendMessage(clientId, {context: "external", type: "getNotes"}, notes => {
 			notes.slice().reverse().map(({timestamp, createdAt, videoId, content, tags}) => {
 				const thumbnailUrl = getVideoThumbnailUrl(videoId);
-				let newNote = $(".note").first().clone();
+				let newNote = $(".note").first().clone().attr("createdAt", createdAt);
 				newNote.find(".note-timestamp").text(formatTimestamp(timestamp)).attr({
 					href: getTimestampedUrl(timestamp, videoId),
 					target: "_blank",
@@ -50,8 +50,8 @@
 
 	const sortByDate = notes => {
 		notes.sort(function (a, b) {
-			let contentA = moment($(a).attr('tooltip')).unix();
-			let contentB = moment($(b).attr('tooltip')).unix();
+			let contentA = moment($(a).attr('createdAt')).unix();
+			let contentB = moment($(b).attr('createdAt')).unix();
 			return (contentA < contentB) ? -1 : (contentA > contentB) ? 1 : 0;
 		});
 
@@ -60,8 +60,8 @@
 
 	const sortByDateOldest = notes => {
 		notes.sort(function (a, b) {
-			let contentA = moment($(a).attr('tooltip')).unix();
-			let contentB = moment($(b).attr('tooltip')).unix();
+			let contentA = moment($(a).attr('createdAt')).unix();
+			let contentB = moment($(b).attr('createdAt')).unix();
 			return (contentA > contentB) ? -1 : (contentA < contentB) ? 1 : 0;
 		});
 
