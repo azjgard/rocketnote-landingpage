@@ -109,8 +109,8 @@
 	}
 
 	function watchTagsForFilter() {
-		$(document).on("click", ".rn_tags", e => {
-			console.log($(e.target).text());
+		$(document).on("click", ".rn_tag", e => {
+			$("#search-filter").val($(e.target).text()).keyup();
 		});
 	}
 
