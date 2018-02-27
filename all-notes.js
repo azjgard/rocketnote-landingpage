@@ -14,7 +14,11 @@
 			newNote.find(".note-created-at").text(moment(createdAt).fromNow());
 			newNote.find(".note-tags").text(tags);
 			if (content.length <= 0) {
-				newNote.find(".note-details").append($(document.createElement("img")).attr("src", "./assets/img/thumbtack_dark.svg"));
+				let thumbtackContainer = $(document.createElement("div")).addClass("thumbtack-container");
+				let thumbtack = $(document.createElement("img")).attr("src", "./assets/img/thumbtack_light.svg");
+				thumbtackContainer.append(thumbtack);
+
+				newNote.find(".note-details").append(thumbtackContainer);
 			}
 			$("#all-notes").append(newNote);
 		});

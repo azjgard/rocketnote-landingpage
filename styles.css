@@ -101,6 +101,14 @@ code {
 	text-decoration: underline;
 }
 
+.thumbtack-container {
+	text-align: center;
+}
+
+.thumbtack-container img {
+	height: 50px;
+}
+
 .filter-buttons {
 	background-color: #e41e35;
 	color: #fefefe;
