@@ -4,7 +4,7 @@
 	chrome.runtime.sendMessage(clientId, {context: "external", type: "getNotes"}, notes => {
 		notes.map(({timestamp, createdAt, videoId, content, tags}) => {
 			const thumbnailUrl = getVideoThumbnailUrl(videoId);
-			let newNote = $(".note")[0].clone();
+			let newNote = $(".note").first().clone();
 			newNote.find(".note-timestamp").text(timestamp);
 			newNote.find(".note-content").text(content);
 			newNote.find(".video-thumbnail").append($(document.createElement("img")).attr("src", thumbnailUrl));
