@@ -149,6 +149,7 @@ code {
 	transition-duration: .2s;
 	transition-delay: .2s;
 	transform: translate(-50%,8px);
+	z-index: 999;
 }
 
 .filter-button {
