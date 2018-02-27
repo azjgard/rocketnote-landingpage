@@ -66,6 +66,7 @@ code {
 .note {
 	display: inline-block;
 	margin: 20px 0;
+	position: relative;
 }
 
 .note-body {
@@ -83,6 +84,15 @@ code {
 
 .note-content {
 	display: inline;
+}
+
+.note-created-at {
+	bottom: 5px;
+	color: #666;
+	font-size: 11px;
+	position: absolute;
+	right: 10px;
+	text-align: right;
 }
 
 .filter-buttons {
