@@ -1,11 +1,11 @@
 <html>
 <head>
-	<title>Frequently Asked Questions - Rocket Note</title>
-	<meta charset="utf-8">
+	<title>Notes Dashboard - Rocket Note</title>
+	<meta charSet="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<meta name="description" content="Answers to some common questions we get about our Rocket Note Chrome extension.">
+	<meta name="description" content="See all of your notes from any YouTube video.">
 	<meta property="og:image" content="https://cdn.launchaco.com/images/3734cd9a-600f-4127-968c-b26be776d664.svg">
-	<link rel="shortcut icon" href="https://cdn.launchaco.com/images/504fac2e-93a9-472f-9799-8502e6a78b89.png">
+	<link rel="shortcut icon" href="https://cdn.launchaco.com/images/504fac2e-93a9-472f-9799-8502e6a78b89.png"/>
 	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400" rel="stylesheet">
 
 	<link rel="stylesheet" href="https://www.launchaco.com/static/AllTemplates.min.css">
@@ -35,13 +35,13 @@
 </head>
 
 <body class="font-modern">
-<div class="red-flat">
+<div class="lightblue-white">
 	<!---->
 	<header class="header">
 		<div class="container-lrg">
 			<div class="flex col-12 spread">
 				<a href="/" class="logo ">
-					<img src="https://cdn.launchaco.com/images/671e3bec-b80a-4ca9-b805-339b1f81d522.svg" alt="Rocket Note Logo">
+					<img src="https://cdn.launchaco.com/images/ba12deac-17f6-48cd-af5e-bf725a4975c5.svg" alt="Rocket Note Logo">
 				</a>
 				<a href="#main-menu" id="menu" class="menu-toggle">
 					<b class="nav-link mr0 secondary-color">☰</b>
@@ -51,8 +51,8 @@
 						<span class="bold">✕</span>
 					</a>
 					<a href="./" class="nav-link secondary-color">Home</a>
-					<a href="./notes" class="nav-link secondary-color">My Notes</a>
-					<a href="./FAQ" class="nav-link primary-color">FAQ</a>
+					<a href="./notes" class="nav-link primary-color">My Notes</a>
+					<a href="./FAQ" class="nav-link secondary-color">FAQ</a>
 					<a href="./keyboard-shortcuts" class="nav-link secondary-color">Shortcuts</a>
 					<a href="mailto:hey@getrocketnote.com" class="nav-link secondary-color">Contact Us</a>
 				</nav>
@@ -62,68 +62,35 @@
 	<section class="section">
 		<div class="container mb40">
 			<div class="col-12 text-center">
-				<h1 class="heading-lrg primary-color ">FAQ</h1>
-				<h2 class="subheading secondary-color mt20 ">Have a question? Here are answers to some we get a lot.</h2>
-				<!---->
+				<h1 class="heading-lrg primary-color ">Notes</h1>
+				<div class="">
+				</div>
 			</div>
 		</div>
-		<!---->
 	</section>
 </div>
-<section id="faq-1" class="section red-white" sitemeta="[object Object]" activepage="FAQ">
-	<div class="container">
-		<div class="col-12 text-center">
-			<h3 class="heading primary-color ">
-				Frequently Asked Questions
-			</h3>
-			<!---->
+<section id="all-notes-section" class="section red-white pad50">
+	<div class="container-lrg flex">
+		<div class="filter-buttons">
+			<ul>
+				<li class="filter-button" id="filter-oldest-date">Date (Oldest)</li>
+				<li class="filter-button" id="filter-newest-date">Date (Newest)</li>
+			</ul>
 		</div>
 	</div>
-	<div class="container">
-		<div class="col-12 mt40">
-			<div class="faq pad20">
-				<b class="bold primary-color ">
-					How do I download Rocket Note?
-				</b>
-				<p class="paragraph secondary-color ">
-					The easy way is to click "Add To Chrome" on <a href="./">our home page</a>. Otherwise, feel free to search on the Chrome app store.
-				</p>
-			</div>
-			<div class="faq pad20">
-				<b class="bold primary-color ">
-					Do you guys have any keyboard shortcuts?
-				</b>
-				<p class="paragraph secondary-color ">
-					We sure do! For a full list of shortcuts, see our complete <a href="./keyboard-shortcuts">Keyboard Shortcuts</a> page.
-				</p>
-			</div>
-			<div class="faq pad20">
-				<b class="bold primary-color ">
-					It's not working... Does that count as a question?
-				</b>
-				<p class="paragraph secondary-color ">
-					We don't just claim to have amazing customer service. Put us to the test by starting a chat (bottom-right) with a member of our support staff!
-				</p>
-			</div>
-			<div class="faq pad20">
-				<b class="bold primary-color ">
-					Can I use Rocket Note on my phone?
-				</b>
-				<p class="paragraph secondary-color ">
-					No, sorry. In the future, we'd love to somehow make this possible, but extensions don't yet exist on mobile browsers.
-				</p>
-			</div>
-			<div class="faq pad20">
-				<b class="bold primary-color ">
-					Is there a Rocket Note extension for Firefox?
-				</b>
-				<p class="paragraph secondary-color ">
-					Not yet! But we're actively working on one as we speak.
-				</p>
-			</div>
+
+	<div class="all-notes" id="all-notes">
+		<div class="note">
+			<h1 class="video-title"></h1>
+			<h3 class="video-channel"></h3>
+			<div class="video-thumbnail"></div>
+			<a class="note-timestamp"></a>
+			<div class="note-content"></div>
+			<div class="note-created-at"></div>
 		</div>
 	</div>
 </section>
+
 <footer id="footer-2" class="section text-center red-accent black-background">
 	<div class="container col-12">
 		<!---->
@@ -137,6 +104,9 @@
 		</div>
 	</div>
 </footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="identity.js"></script>
+<script type="text/javascript" src="all-notes.js"></script>
 </body>
 </html>
