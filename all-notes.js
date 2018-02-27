@@ -34,6 +34,7 @@
 	}
 
 	watchSortByDate();
+	watchSortByDateOldest();
 
 	function getVideoThumbnailUrl(videoId) {
 		return "https://i1.ytimg.com/vi/" + videoId + "/mqdefault.jpg";
@@ -48,16 +49,34 @@
 	};
 
 	const sortByDate = notes => {
-		$("#all-notes").html(notes.sort(function (a, b) {
+		notes.sort(function (a, b) {
 			let contentA = moment($(a).attr('tooltip')).unix();
 			let contentB = moment($(b).attr('tooltip')).unix();
 			return (contentA < contentB) ? -1 : (contentA > contentB) ? 1 : 0;
-		}));
+		});
+
+		console.log(notes);
+	};
+
+	const sortByDateOldest = notes => {
+		notes.sort(function (a, b) {
+			let contentA = moment($(a).attr('tooltip')).unix();
+			let contentB = moment($(b).attr('tooltip')).unix();
+			return (contentA > contentB) ? -1 : (contentA < contentB) ? 1 : 0;
+		});
+
+		console.log(notes);
 	};
 
 	function watchSortByDate() {
 		$(document).on("click", "#filter-newest-date", () => {
 			sortByDate($(".note"));
+		});
+	}
+
+	function watchSortByDateOldest() {
+		$(document).on("click", "#filter-oldest-date", () => {
+			sortByDateOldest($(".note"));
 		});
 	}
 
