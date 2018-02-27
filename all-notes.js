@@ -49,8 +49,8 @@
 
 	const sortByDate = notes => {
 		$("#all-notes").html(notes.sort(function (a, b) {
-			let contentA =parseInt( $(a).attr('tooltip'));
-			let contentB =parseInt( $(b).attr('tooltip'));
+			let contentA = method($(a).attr('tooltip')).unix();
+			let contentB = method($(b).attr('tooltip')).unix();
 			return (contentA < contentB) ? -1 : (contentA > contentB) ? 1 : 0;
 		}));
 	};
