@@ -1,6 +1,5 @@
 (() => {
-	let loggedIn = Cookies.get("name");
-	if (loggedIn === "true") {
+	if (Cookies.get("auth") === "true") {
 		const clientId = "hemjflepggljigpcaneoeldgipbpcbmg";
 
 		chrome.runtime.sendMessage(clientId, {context: "external", type: "getNotes"}, notes => {
