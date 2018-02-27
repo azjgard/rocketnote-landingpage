@@ -90,6 +90,7 @@
 			let filterText = $(e.target).val();
 			$(".note").hide();
 			$(".note:contains('" + filterText + "')").show();
+			$("#all-notes:empty").text("No results found.");
 		});
 	}
 
