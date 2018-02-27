@@ -143,7 +143,7 @@ code {
 	will-change: transform,opacity;
 }
 
-.note-create-at:hover[title]::before {
+.note-create-at[title]:hover::before {
 	opacity: 1;
 	pointer-events: inherit;
 	transition-duration: .2s;
