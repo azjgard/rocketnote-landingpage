@@ -10,6 +10,7 @@
 			newNote.find(".video-thumbnail").append($(document.createElement("img")).attr("src", thumbnailUrl));
 			newNote.find(".note-created-at").text(createdAt);
 			newNote.find(".note-tags").text(tags);
+			$("#all-notes").append(newNote);
 		});
 	});
 
