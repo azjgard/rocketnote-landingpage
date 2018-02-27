@@ -33,8 +33,8 @@
 		}, 2000)
 	}
 
-	watchSortByDate();
 	watchSortByDateOldest();
+	watchSortByDateNewest();
 
 	function getVideoThumbnailUrl(videoId) {
 		return "https://i1.ytimg.com/vi/" + videoId + "/mqdefault.jpg";
@@ -48,35 +48,39 @@
 		return "https://youtube.com/watch?v=" + videoId + "&t=" + timestamp + "s";
 	};
 
-	const sortByDate = notes => {
+	const sortByDateOldest = notes => {
 		notes.sort(function (a, b) {
 			let contentA = moment($(a).attr('createdAt')).unix();
 			let contentB = moment($(b).attr('createdAt')).unix();
 			return (contentA < contentB) ? -1 : (contentA > contentB) ? 1 : 0;
 		});
 
-		console.log(notes);
+		$("#all-notes").html(notes);
 	};
 
-	const sortByDateOldest = notes => {
+	const sortByDateNewest = notes => {
 		notes.sort(function (a, b) {
 			let contentA = moment($(a).attr('createdAt')).unix();
 			let contentB = moment($(b).attr('createdAt')).unix();
 			return (contentA > contentB) ? -1 : (contentA < contentB) ? 1 : 0;
 		});
 
-		console.log(notes);
+		$("#all-notes").html(notes);
 	};
 
-	function watchSortByDate() {
-		$(document).on("click", "#filter-newest-date", () => {
-			sortByDate($(".note"));
+	function watchSortByDateOldest() {
+		$(document).on("click", "#filter-newest-date", e => {
+			sortByDateOldest($(".note"));
+			$(".filter-button").removeClass("current");
+			$(e.target).addClass("current");
 		});
 	}
 
-	function watchSortByDateOldest() {
+	function watchSortByDateNewest() {
 		$(document).on("click", "#filter-oldest-date", () => {
-			sortByDateOldest($(".note"));
+			sortByDateNewest($(".note"));
+			$(".filter-button").removeClass("current");
+			$(e.target).addClass("current");
 		});
 	}
 
