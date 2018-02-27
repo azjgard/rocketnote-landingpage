@@ -110,6 +110,7 @@ code {
 
 .all-notes.list-view .note {
 	margin: 5px 0;
+	max-width: 100%;
 	width: 100%;
 }
 
