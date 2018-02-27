@@ -1,6 +1,12 @@
 #feature-1 {
-	padding-top: 400px;
+	border-top: 150px solid #e41e35;
+	padding-top: 250px;
 	margin-top: -400px;
+}
+
+#feature-2 {
+	padding-bottom: 80px;
+	padding-top: 50px;
 }
 
 #feature-1,
