@@ -28,7 +28,9 @@
 		});
 	} else {
 		$("html").html("You are not logged in. Redirecting to home page...");
-		window.location.replace("/");
+		setTimeout(function() {
+			window.location.replace("/");
+		}, 2000)
 	}
 
 	function getVideoThumbnailUrl(videoId) {

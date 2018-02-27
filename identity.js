@@ -24,7 +24,9 @@
 	$(document).on("click", "#logout-button", () => {
 		chrome.runtime.sendMessage(clientId, {context: "external", type: "logout"}, isLoggedIn => {
 			Cookies.set("auth", isLoggedIn ? "true" : "false");
-			window.location.reload();
+			setTimeout(() => {
+				window.location.reload();
+			}, 5000);
 		});
 	});
 })();
