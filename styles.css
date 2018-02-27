@@ -116,9 +116,9 @@ code {
 	padding: 20px;
 }
 
-.note-created-at[title]::before {
+[tooltip]:before {
 	position : absolute;
-	content : attr(title);
+	content : attr(tooltip);
 	opacity : 0;
 	transition-duration: .2s;
 	background: #fefefe;
@@ -143,7 +143,7 @@ code {
 	will-change: transform,opacity;
 }
 
-.note-create-at[title]:hover::before {
+[tooltip]:hover:before {
 	opacity: 1;
 	pointer-events: inherit;
 	transition-duration: .2s;
