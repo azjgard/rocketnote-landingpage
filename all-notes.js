@@ -92,9 +92,7 @@
 			$(".note").hide();
 			$(".note:contains('" + filterText + "')").show();
 			if(allNotesContainer.children(':visible').length === 0) {
-				allNotesContainer.text("No results found");
-			} else {
-				allNotesContainer.text("");
+				allNotesContainer.append("<p>No results found.</p>");
 			}
 		});
 	}
