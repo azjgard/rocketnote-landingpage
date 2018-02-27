@@ -108,6 +108,27 @@ code {
 	text-decoration: underline;
 }
 
+.all-notes.list-view .note {
+	margin: 5px 0;
+	width: 100%;
+}
+
+.all-notes.list-view .note-body {
+	border-radius: 2px;
+	height: 80px;
+	padding: 0;
+}
+
+.all-notes.list-view .note .video-thumbnail {
+	display: inline-block;
+}
+
+.all-notes.list-view .note .video-thumbnail img {
+	height: 100%;
+}
+
+.all-notes
+
 .thumbtack-container {
 	text-align: center;
 }
