@@ -89,7 +89,7 @@
 		$(document).on("keyup", "#search-filter", e => {
 			let filterText = $(e.target).val();
 			$(".note").hide();
-			$(".note:container('" + filterText + "')").show();
+			$(".note:contains('" + filterText + "')").show();
 		});
 	}
 
