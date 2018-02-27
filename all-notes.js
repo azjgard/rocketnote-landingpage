@@ -33,6 +33,8 @@
 		}, 2000)
 	}
 
+	watchSortByDate();
+
 	function getVideoThumbnailUrl(videoId) {
 		return "https://i1.ytimg.com/vi/" + videoId + "/mqdefault.jpg";
 	}
@@ -44,6 +46,20 @@
 	const getTimestampedUrl = (timestamp, videoId) => {
 		return "https://youtube.com/watch?v=" + videoId + "&t=" + timestamp + "s";
 	};
+
+	const sortByDate = notes => {
+		$("#all-notes").html(notes.sort(function (a, b) {
+			let contentA =parseInt( $(a).attr('tooltip'));
+			let contentB =parseInt( $(b).attr('tooltip'));
+			return (contentA < contentB) ? -1 : (contentA > contentB) ? 1 : 0;
+		}));
+	};
+
+	function watchSortByDate() {
+		$(document).on("click", "#filter-newest-date", () => {
+			sortByDate($(".note"));
+		});
+	}
 
 	String.prototype.trunc = function(n) {
 		return (this.length > n) ? this.substr(0, n-1) + '...' : this;
