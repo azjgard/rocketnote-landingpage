@@ -7,10 +7,12 @@
 			Cookies.set('auth', 'true');
 			$("#logout-button").show();
 			$("#login-button").hide();
+			$("#nav-notes").show();
 		} else {
 			Cookies.set('auth', 'false');
 			$("#login-button").show();
 			$("#logout-button").hide();
+			$("#nav-notes").hide();
 		}
 	});
 
