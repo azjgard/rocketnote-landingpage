@@ -59,13 +59,19 @@ code {
 	padding: 0 5px;
 }
 
+.all-notes {
+	padding-top: 30px;
+}
+
 .note {
 	display: inline-block;
+	margin: 20px 0;
 }
 
 .note-body {
 	background-color: #efefef;
 	border-radius: 5px;
+	height: 240px;
 	padding: 0 0 20px 0;
 	overflow: hidden;
 }
@@ -80,6 +86,7 @@ code {
 	cursor: pointer;
 	display: inline-block;
 	font-weight: bold;
+	margin-right: 20px;
 }
 
 .filter-button.current {
@@ -87,7 +94,11 @@ code {
 }
 
 #all-notes-section {
-	padding-top: 0;
+	padding: 0 0 50px 0;
+}
+
+#notes-header {
+	padding-bottom: 0;
 }
 
 /*=== MEDIA QUERIES ===*/

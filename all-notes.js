@@ -12,6 +12,8 @@
 			newNote.find(".note-tags").text(tags);
 			$("#all-notes").append(newNote);
 		});
+
+		$(".note").first().remove();
 	});
 
 	function getVideoThumbnailUrl(videoId) {
