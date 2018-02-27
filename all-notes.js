@@ -91,7 +91,7 @@
 			let allNotesContainer = $("#all-notes");
 			$(".note").hide();
 			$(".note:contains('" + filterText + "')").show();
-			if(allNotesContainer.children(':visible').length === 0) {
+			if(('.note:visible').length === 0) {
 				allNotesContainer.append("<p class='placeholder'>No results found.</p>");
 			} else {
 				$(".placeholder").remove();
