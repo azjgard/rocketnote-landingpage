@@ -86,7 +86,7 @@
 	}
 
 	function watchSearchFilter() {
-		$(document).on("change", "#search-filter", e => {
+		$(document).on("keyup", "#search-filter", e => {
 			console.log($(e.target).val());
 		});
 	}
