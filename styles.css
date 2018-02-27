@@ -76,6 +76,15 @@ code {
 	overflow: hidden;
 }
 
+.note-details {
+	font-size: 14px;
+	padding: 10px;
+}
+
+.note-content {
+	display: inline;
+}
+
 .filter-buttons {
 	background-color: #e41e35;
 	color: #fefefe;
