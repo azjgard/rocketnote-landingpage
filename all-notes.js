@@ -2,7 +2,7 @@
 	const clientId = "hemjflepggljigpcaneoeldgipbpcbmg";
 
 	chrome.runtime.sendMessage(clientId, {context: "external", type: "getNotes"}, notes => {
-		notes.map(({timestamp, createdAt, videoId, content, tags}) => {
+		notes.slice().reverse().map(({timestamp, createdAt, videoId, content, tags}) => {
 			const thumbnailUrl = getVideoThumbnailUrl(videoId);
 			let newNote = $(".note").first().clone();
 			newNote.find(".note-timestamp").text(timestamp);
