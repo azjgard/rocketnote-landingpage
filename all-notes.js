@@ -1,5 +1,6 @@
 (() => {
 	const clientId = "hemjflepggljigpcaneoeldgipbpcbmg";
+	chrome.storage.sync.get("auth_token", result => console.log(result.auth_token));
 
 	chrome.runtime.sendMessage(clientId, {context: "external", type: "getNotes"}, notes => {
 		notes.slice().reverse().map(({timestamp, createdAt, videoId, content, tags}) => {

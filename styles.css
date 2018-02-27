@@ -106,7 +106,8 @@ code {
 }
 
 .thumbtack-container img {
-	height: 50px;
+	height: 40px;
+	margin-top: 20px;
 }
 
 .filter-buttons {
