@@ -12,7 +12,7 @@
 				});
 				newNote.find(".note-content").text(content.trunc(200));
 				newNote.find(".video-thumbnail").append($(document.createElement("img")).attr("src", thumbnailUrl));
-				newNote.find(".note-created-at").text(moment(createdAt).fromNow());
+				newNote.find(".note-created-at").text(moment(createdAt).fromNow()).attr("title", moment(createdAt).format('MMMM Do YYYY, h:mm a'));
 				newNote.find(".note-tags").text(tags);
 				if (content.length <= 0) {
 					let thumbtackContainer = $(document.createElement("div")).addClass("thumbtack-container");
