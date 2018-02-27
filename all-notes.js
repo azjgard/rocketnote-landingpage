@@ -1,4 +1,8 @@
 (() => {
+	linkify.options.defaults.format = function(value) {
+		return value.trunc(21);
+	};
+
 	if (Cookies.get("auth") === "true") {
 		const clientId = "hemjflepggljigpcaneoeldgipbpcbmg";
 
@@ -10,10 +14,12 @@
 					href: getTimestampedUrl(timestamp, videoId),
 					target: "_blank",
 				});
-				newNote.find(".note-content").text(content.trunc(200));
+				let noteContent = newNote.find(".note-content");
+				noteContent.text(content.trunc(200));
+				addClassToHashtags(noteContent);
+				noteContent.linkify();
 				newNote.find(".video-thumbnail").append($(document.createElement("img")).attr("src", thumbnailUrl));
 				newNote.find(".note-created-at").text(moment(createdAt).fromNow()).attr("tooltip", moment(createdAt).format('MMMM Do YYYY, h:mm a'));
-				newNote.find(".note-tags").text(tags);
 				if (content.length <= 0) {
 					let thumbtackContainer = $(document.createElement("div")).addClass("thumbtack-container");
 					let thumbtack = $(document.createElement("img")).attr("src", "./assets/img/thumbtack_light.svg");
@@ -100,6 +106,12 @@
 			}
 		});
 	}
+
+	const addClassToHashtags = note => {
+		note.html(function (_, html) {
+			return html.replace(/(\#\w+)/g, '<span class="rn_tag">$1</span>');
+		});
+	};
 
 	String.prototype.trunc = function (n) {
 		return (this.length > n) ? this.substr(0, n - 1) + '...' : this;

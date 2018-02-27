@@ -190,6 +190,10 @@ code {
 	padding-bottom: 0;
 }
 
+.rn_tag {
+	color: #4791df;
+}
+
 /*=== MEDIA QUERIES ===*/
 
 @media (max-width: 768px) {
