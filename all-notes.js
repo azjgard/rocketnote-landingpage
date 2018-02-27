@@ -15,7 +15,7 @@
 					target: "_blank",
 				});
 				let noteContent = newNote.find(".note-content");
-				noteContent.text(content.trunc(200));
+				noteContent.text(content.trunc(180)).attr("tooltip", content);
 				addClassToHashtags(noteContent);
 				$(noteContent).linkify();
 				newNote.find(".video-thumbnail").append($(document.createElement("img")).attr("src", thumbnailUrl));
