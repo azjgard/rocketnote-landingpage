@@ -42,6 +42,7 @@
 	watchSortByDateOldest();
 	watchSortByDateNewest();
 	watchSearchFilter();
+	watchTagsForFilter();
 
 	function getVideoThumbnailUrl(videoId) {
 		return "https://i1.ytimg.com/vi/" + videoId + "/mqdefault.jpg";
@@ -104,6 +105,12 @@
 			} else {
 				$(".placeholder").remove();
 			}
+		});
+	}
+
+	function watchTagsForFilter() {
+		$(document).on("click", ".rn_tags", e => {
+			$("#search-filter").val($(e.target).text()).keyup();
 		});
 	}
 

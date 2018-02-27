@@ -192,6 +192,11 @@ code {
 
 .rn_tag {
 	color: #4791df;
+	cursor: pointer;
+}
+
+.rn_tag:hover {
+	color: #4ba4f6;
 }
 
 /*=== MEDIA QUERIES ===*/
