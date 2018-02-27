@@ -17,16 +17,16 @@
 	$(document).on("click", "#login-button", () => {
 		chrome.runtime.sendMessage(clientId, {context: "external", type: "login"}, isLoggedIn => {
 			Cookies.set("auth", isLoggedIn ? "true" : "false");
-			window.location.reload("/notes");
+			setTimeout(() => {
+				window.location.reload();
+			}, 3000);
 		});
 	});
 
 	$(document).on("click", "#logout-button", () => {
 		chrome.runtime.sendMessage(clientId, {context: "external", type: "logout"}, isLoggedIn => {
 			Cookies.set("auth", isLoggedIn ? "true" : "false");
-			setTimeout(() => {
-				window.location.reload();
-			}, 5000);
+			window.location.reload();
 		});
 	});
 })();
