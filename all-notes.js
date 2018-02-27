@@ -13,6 +13,9 @@
 			newNote.find(".video-thumbnail").append($(document.createElement("img")).attr("src", thumbnailUrl));
 			newNote.find(".note-created-at").text(moment(createdAt).fromNow());
 			newNote.find(".note-tags").text(tags);
+			if (content.length <= 0) {
+				newNote.find(".note-details").append($(document.createElement("img")).attr("src", "./assets/img/thumbtack_dark.svg"));
+			}
 			$("#all-notes").append(newNote);
 		});
 
