@@ -88,9 +88,14 @@
 	function watchSearchFilter() {
 		$(document).on("keyup", "#search-filter", e => {
 			let filterText = $(e.target).val();
+			let allNotesContainer = $("#all-notes");
 			$(".note").hide();
 			$(".note:contains('" + filterText + "')").show();
-			$("#all-notes:empty").text("No results found.");
+			if(allNotesContainer.children(':visible').length === 0) {
+				allNotesContainer.text("No results found");
+			} else {
+				allNotesContainer.text("");
+			}
 		});
 	}
 
