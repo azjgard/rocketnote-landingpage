@@ -28,7 +28,7 @@
 		});
 	} else {
 		$("html").html("You are not logged in. Redirecting to home page...");
-		setTimeout(function() {
+		setTimeout(function () {
 			window.location.replace("/");
 		}, 2000)
 	}
@@ -91,15 +91,17 @@
 			let allNotesContainer = $("#all-notes");
 			$(".note").hide();
 			$(".note:contains('" + filterText + "')").show();
-			if(!$(".note").is(":visible") && $(".placeholder").length === 0) {
-				allNotesContainer.append("<p class='placeholder'>No results found.</p>");
+			if (!$(".note").is(":visible")) {
+				if ($(".placeholder").length === 0) {
+					allNotesContainer.append("<p class='placeholder'>No results found.</p>");
+				}
 			} else {
 				$(".placeholder").remove();
 			}
 		});
 	}
 
-	String.prototype.trunc = function(n) {
-		return (this.length > n) ? this.substr(0, n-1) + '...' : this;
+	String.prototype.trunc = function (n) {
+		return (this.length > n) ? this.substr(0, n - 1) + '...' : this;
 	};
 })();
