@@ -116,6 +116,41 @@ code {
 	padding: 20px;
 }
 
+.note-created-at[title]::before {
+	position : absolute;
+	content : attr(title);
+	opacity : 0;
+	transition-duration: .2s;
+	background: #fefefe;
+	border-radius: 3px;
+	-webkit-box-shadow: 0 7px 29px 5px rgba(0,0,0,0.08);
+	-moz-box-shadow: 0 7px 29px 5px rgba(0,0,0,0.08);
+	box-shadow: 0 7px 29px 5px rgba(0,0,0,0.08);
+	color: #363941;
+	white-space: nowrap;
+	padding: 5px 10px;
+	pointer-events: none;
+	font-family: "Source Sans Pro",sans-serif;
+	font-size: .87rem;
+	text-align: center;
+	margin-top: -1px;
+	top: 100%;
+	left: 75px;
+	right: auto;
+	transform: translateX(-50%);
+	transition: transform 0.3s cubic-bezier(0.19,1,0.22,1),opacity 0.2s cubic-bezier(0.19,1,0.22,1);
+	z-index: 1;
+	will-change: transform,opacity;
+}
+
+.note-create-at:hover[title]::before {
+	opacity: 1;
+	pointer-events: inherit;
+	transition-duration: .2s;
+	transition-delay: .2s;
+	transform: translate(-50%,8px);
+}
+
 .filter-button {
 	cursor: pointer;
 	display: inline-block;
