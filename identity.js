@@ -20,7 +20,7 @@
 			let authCheck = setInterval(() => {
 				chrome.runtime.sendMessage(clientId, {context: "external", type: "identity"}, userProfile => {
 					if (userProfile.email) {
-						window.locaation.reload("/notes");
+						window.location.reload("/notes");
 						clearInterval(authCheck);
 					}
 				});
