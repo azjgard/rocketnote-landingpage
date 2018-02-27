@@ -87,7 +87,9 @@
 
 	function watchSearchFilter() {
 		$(document).on("keyup", "#search-filter", e => {
-			console.log($(e.target).val());
+			let filterText = $(e.target).val();
+			$(".note").hide();
+			$(".note:container('" + filterText + "')").show();
 		});
 	}
 
