@@ -1,18 +1,20 @@
 (() => {
 	const clientId = "hemjflepggljigpcaneoeldgipbpcbmg";
 
+	if (Cookies.get("auth") === "true") {
+		changeNavStateToLoggedIn();
+	} else {
+		changeNavStateToLoggedOut();
+	}
+
 	chrome.runtime.sendMessage(clientId, {context: "external", type: "identity"}, userProfile => {
 		if (userProfile.email) {
 			convertfox.identify(userProfile.email);
 			Cookies.set('auth', 'true');
-			$("#logout-button").show();
-			$("#login-button").hide();
-			$("#nav-notes").show();
+			changeNavStateToLoggedIn();
 		} else {
 			Cookies.set('auth', 'false');
-			$("#login-button").show();
-			$("#logout-button").hide();
-			$("#nav-notes").hide();
+			changeNavStateToLoggedOut();
 		}
 	});
 
@@ -37,4 +39,16 @@
 			window.location.reload();
 		});
 	});
+
+	function changeNavStateToLoggedIn() {
+		$("#logout-button").show();
+		$("#login-button").hide();
+		$("#nav-notes").show();
+	}
+
+	function changeNavStateToLoggedOut() {
+		$("#login-button").show();
+		$("#logout-button").hide();
+		$("#nav-notes").hide();
+	}
 })();
