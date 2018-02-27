@@ -29,7 +29,7 @@
 						window.location.replace("/notes");
 					}
 				});
-			}, 1000);
+			}, 500);
 		});
 	});
 
