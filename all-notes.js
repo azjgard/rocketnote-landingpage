@@ -35,6 +35,7 @@
 
 	watchSortByDateOldest();
 	watchSortByDateNewest();
+	watchSearchFilter();
 
 	function getVideoThumbnailUrl(videoId) {
 		return "https://i1.ytimg.com/vi/" + videoId + "/mqdefault.jpg";
@@ -81,6 +82,12 @@
 			sortByDateNewest($(".note"));
 			$(".filter-button").removeClass("current");
 			$(e.target).addClass("current");
+		});
+	}
+
+	function watchSearchFilter() {
+		$(document).on("change", "#search-filter", e => {
+			console.log($(e.target).val());
 		});
 	}
 
