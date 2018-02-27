@@ -27,8 +27,8 @@
 	border-radius: 5px;
 	border: 1px solid #d6dadc;
 	border-bottom-color: #cdd2d4;
-	-webkit-box-shadow: 0 2px 3px rgba(0,0,0,.1);
-	box-shadow: 0 2px 3px rgba(0,0,0,.1);
+	-webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, .1);
+	box-shadow: 0 2px 3px rgba(0, 0, 0, .1);
 	color: #4d4d4d;
 	cursor: default;
 	display: inline-block;
@@ -59,6 +59,39 @@ code {
 	padding: 0 5px;
 }
 
+.note {
+	display: inline-block;
+}
+
+.note-body {
+	background-color: #efefef;
+	border-radius: 5px;
+	padding: 0 0 20px 0;
+	overflow: hidden;
+}
+
+.filter-buttons {
+	background-color: #e41e35;
+	color: #fefefe;
+	padding: 20px;
+}
+
+.filter-button {
+	cursor: pointer;
+	display: inline-block;
+	font-weight: bold;
+}
+
+.filter-button.current {
+	text-decoration: underline;
+}
+
+#all-notes-section {
+	padding-top: 0;
+}
+
+/*=== MEDIA QUERIES ===*/
+
 @media (max-width: 768px) {
 	#feature-1 {
 		padding-top: 50px;
@@ -68,13 +101,4 @@ code {
 	.browser {
 		display: none;
 	}
-}
-
-.note {
-	margin: 15px;
-	display: inline-block;
-	background-color: #efefef;
-	padding: 0 0 20px 0;
-	border-radius: 5px;
-	overflow: hidden;
 }
