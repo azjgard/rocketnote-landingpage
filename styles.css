@@ -69,3 +69,12 @@ code {
 		display: none;
 	}
 }
+
+.note {
+	margin: 15px;
+	display: inline-block;
+	background-color: #efefef;
+	padding: 0 0 20px 0;
+	border-radius: 5px;
+	overflow: hidden;
+}
