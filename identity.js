@@ -22,7 +22,9 @@
 	});
 
 	$(document).on("click", "#logout-button", () => {
-		Cookies.set("auth", "false");
-		window.location.reload();
+		chrome.runtime.sendMessage(clientId, {context: "external", type: "logout"}, isLoggedIn => {
+			Cookies.set("auth", isLoggedIn ? "true" : "false");
+			window.location.reload();
+		});
 	});
 })();
