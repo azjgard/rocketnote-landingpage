@@ -1,31 +1,36 @@
 (() => {
-	const clientId = "hemjflepggljigpcaneoeldgipbpcbmg";
-	chrome.storage.sync.get("auth_token", result => console.log(result.auth_token));
+	let loggedIn = Cookies.get("name");
+	if (loggedIn === "true") {
+		const clientId = "hemjflepggljigpcaneoeldgipbpcbmg";
 
-	chrome.runtime.sendMessage(clientId, {context: "external", type: "getNotes"}, notes => {
-		notes.slice().reverse().map(({timestamp, createdAt, videoId, content, tags}) => {
-			const thumbnailUrl = getVideoThumbnailUrl(videoId);
-			let newNote = $(".note").first().clone();
-			newNote.find(".note-timestamp").text(formatTimestamp(timestamp)).attr({
-				href: getTimestampedUrl(timestamp, videoId),
-				target: "_blank",
+		chrome.runtime.sendMessage(clientId, {context: "external", type: "getNotes"}, notes => {
+			notes.slice().reverse().map(({timestamp, createdAt, videoId, content, tags}) => {
+				const thumbnailUrl = getVideoThumbnailUrl(videoId);
+				let newNote = $(".note").first().clone();
+				newNote.find(".note-timestamp").text(formatTimestamp(timestamp)).attr({
+					href: getTimestampedUrl(timestamp, videoId),
+					target: "_blank",
+				});
+				newNote.find(".note-content").text(content.trunc(200));
+				newNote.find(".video-thumbnail").append($(document.createElement("img")).attr("src", thumbnailUrl));
+				newNote.find(".note-created-at").text(moment(createdAt).fromNow());
+				newNote.find(".note-tags").text(tags);
+				if (content.length <= 0) {
+					let thumbtackContainer = $(document.createElement("div")).addClass("thumbtack-container");
+					let thumbtack = $(document.createElement("img")).attr("src", "./assets/img/thumbtack_light.svg");
+					thumbtackContainer.append(thumbtack);
+
+					newNote.find(".note-details").append(thumbtackContainer);
+				}
+				$("#all-notes").append(newNote);
 			});
-			newNote.find(".note-content").text(content.trunc(200));
-			newNote.find(".video-thumbnail").append($(document.createElement("img")).attr("src", thumbnailUrl));
-			newNote.find(".note-created-at").text(moment(createdAt).fromNow());
-			newNote.find(".note-tags").text(tags);
-			if (content.length <= 0) {
-				let thumbtackContainer = $(document.createElement("div")).addClass("thumbtack-container");
-				let thumbtack = $(document.createElement("img")).attr("src", "./assets/img/thumbtack_light.svg");
-				thumbtackContainer.append(thumbtack);
 
-				newNote.find(".note-details").append(thumbtackContainer);
-			}
-			$("#all-notes").append(newNote);
+			$(".note").first().remove();
 		});
-
-		$(".note").first().remove();
-	});
+	} else {
+		$("html").html("You are not logged in. Redirecting to home page...");
+		window.location.replace("/");
+	}
 
 	function getVideoThumbnailUrl(videoId) {
 		return "https://i1.ytimg.com/vi/" + videoId + "/mqdefault.jpg";
