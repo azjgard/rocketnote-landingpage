@@ -69,7 +69,7 @@
 	};
 
 	function watchSortByDateOldest() {
-		$(document).on("click", "#filter-newest-date", e => {
+		$(document).on("click", "#filter-oldest-date", e => {
 			sortByDateOldest($(".note"));
 			$(".filter-button").removeClass("current");
 			$(e.target).addClass("current");
@@ -77,7 +77,7 @@
 	}
 
 	function watchSortByDateNewest() {
-		$(document).on("click", "#filter-oldest-date", () => {
+		$(document).on("click", "#filter-newest-date", e => {
 			sortByDateNewest($(".note"));
 			$(".filter-button").removeClass("current");
 			$(e.target).addClass("current");
