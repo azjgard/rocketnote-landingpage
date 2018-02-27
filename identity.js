@@ -21,6 +21,7 @@
 				chrome.runtime.sendMessage(clientId, {context: "external", type: "identity"}, userProfile => {
 					if (userProfile.email) {
 						clearInterval(authCheck);
+						Cookies.set("auth", "true");
 						window.location.replace("/notes");
 					}
 				});
