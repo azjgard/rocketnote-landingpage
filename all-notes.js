@@ -5,7 +5,7 @@
 		chrome.runtime.sendMessage(clientId, {context: "external", type: "getNotes"}, notes => {
 			notes.slice().reverse().map(({timestamp, createdAt, videoId, content, tags}) => {
 				const thumbnailUrl = getVideoThumbnailUrl(videoId);
-				let newNote = $(".note").first().clone().attr("createdAt", createdAt);
+				let newNote = $(".note").first().clone().attr("createdAt", createdAt).show();
 				newNote.find(".note-timestamp").text(formatTimestamp(timestamp)).attr({
 					href: getTimestampedUrl(timestamp, videoId),
 					target: "_blank",
