@@ -17,9 +17,14 @@
 	$(document).on("click", "#login-button", () => {
 		chrome.runtime.sendMessage(clientId, {context: "external", type: "login"}, isLoggedIn => {
 			Cookies.set("auth", isLoggedIn ? "true" : "false");
-			setTimeout(() => {
-				window.location.reload();
-			}, 3000);
+			let authCheck = setInterval(() => {
+				chrome.runtime.sendMessage(clientId, {context: "external", type: "identity"}, userProfile => {
+					if (userProfile.email) {
+						window.locaation.reload("/notes");
+						clearInterval(authCheck);
+					}
+				});
+			}, 1000);
 		});
 	});
 
