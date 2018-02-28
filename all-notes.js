@@ -80,7 +80,7 @@
 	function watchSortByDateOldest() {
 		$(document).on("click", "#filter-oldest-date", e => {
 			sortByDateOldest($(".note"));
-			$(".filter-button").removeClass("current");
+			$(".filter-buttons:not(.white).filter-button").removeClass("current");
 			$(e.target).addClass("current");
 		});
 	}
