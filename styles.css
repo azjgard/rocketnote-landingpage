@@ -128,7 +128,16 @@ code {
 	height: 100%;
 }
 
-.all-notes
+.all-notes.list-view .note-details {
+	left: 16%;
+	position: relative;
+	top: -75px;
+	width: 85%;
+}
+
+.all-notes.list-view .thumbtack-container {
+	margin-top: -20px;
+}
 
 .thumbtack-container {
 	text-align: center;
