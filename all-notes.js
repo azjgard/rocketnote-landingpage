@@ -152,8 +152,9 @@
 		$(document).on("click", "#all-notes .note-content", e => {
 			const note = $(e.target).closest(".note");
 			const modalContainer = $(document.createElement("div")).addClass("modal-container");
-			let newNote = note.clone().appendTo(modalContainer).find(".note-content").text(note.attr("content"));
-			newNote.find("img").attr("src", getHdVideoThumbnailUrl(note.attr("videoId")));
+			let newNote = note.clone();
+			newNote.appendTo(modalContainer).find(".note-content").text(note.attr("content"));
+			$(newNote.find("img")).attr("src", getHdVideoThumbnailUrl(note.attr("videoId")));
 			modalContainer.hide().appendTo($("body")).fadeIn();
 		});
 
