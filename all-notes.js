@@ -43,6 +43,7 @@
 	watchSortByDateNewest();
 	watchSearchFilter();
 	watchTagsForFilter();
+	watchToggleView();
 
 	function getVideoThumbnailUrl(videoId) {
 		return "https://i1.ytimg.com/vi/" + videoId + "/mqdefault.jpg";
@@ -112,6 +113,13 @@
 		$(document).on("click", ".rn_tag", e => {
 			$("#search-filter").val($(e.target).text()).keyup();
 		});
+	}
+
+	function watchToggleView() {
+		$(document).on("click", "#view-toggle", e => {
+			$(e.target).toggleClass("current");
+			$("#all-notes").toggleClass("list-view");
+		})
 	}
 
 	const addClassToHashtags = note => {
