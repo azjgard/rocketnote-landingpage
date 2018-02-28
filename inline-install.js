@@ -1,12 +1,12 @@
 $(() => {
 	checkIfExtensionHasBeenInstalled();
-	watchInlineInstallButtons();
-
-	function watchInlineInstallButtons() {
-		$(document).on("click", ".inline-install", () => {
-			chrome.webstore.install();
-		});
-	}
+	// watchInlineInstallButtons();
+	//
+	// function watchInlineInstallButtons() {
+	// 	$(document).on("click", ".inline-install", () => {
+	// 		chrome.webstore.install();
+	// 	});
+	// }
 
 	function checkIfExtensionHasBeenInstalled() {
 		if (chrome.app.isInstalled) {
