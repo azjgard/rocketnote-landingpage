@@ -3,10 +3,7 @@ $(() => {
 
 		if (document.getElementById('rn_extension-is-installed')) {
 			inlineInstallButtons.addClass("inline-added");
-			inlineInstallButtons.find("span").text("View Docs");
-			inlineInstallButtons.click(() => {
-
-			});
+			inlineInstallButtons.find("span").text("Added To Chrome");
 		} else {
 			inlineInstallButtons.click(() => {
 				chrome.webstore.install()
