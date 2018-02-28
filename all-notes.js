@@ -18,7 +18,7 @@
 				noteContent.text(content.trunc(180));
 				addClassToHashtags(noteContent);
 				$(noteContent).linkify();
-				newNote.find(".video-thumbnail").append($(document.createElement("img")).attr("src", thumbnailUrl));
+				newNote.find(".video-thumbnail").attr("href", getTimestampedUrl(timestamp, videoId)).append($(document.createElement("img")).attr("src", thumbnailUrl));
 				newNote.find(".note-created-at").text(moment(createdAt).fromNow()).attr("tooltip", moment(createdAt).format('MMMM Do YYYY, h:mm a'));
 				if (content.length <= 0) {
 					let thumbtackContainer = $(document.createElement("div")).addClass("thumbtack-container");
