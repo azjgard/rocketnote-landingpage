@@ -43,7 +43,8 @@
 	watchSortByDateNewest();
 	watchSearchFilter();
 	watchTagsForFilter();
-	watchToggleView();
+	watchToggleViewGrid();
+	watchToggleViewList();
 
 	function getVideoThumbnailUrl(videoId) {
 		return "https://i1.ytimg.com/vi/" + videoId + "/mqdefault.jpg";
@@ -115,10 +116,19 @@
 		});
 	}
 
-	function watchToggleView() {
-		$(document).on("click", "#view-toggle", e => {
-			$(e.target).toggleClass("current");
-			$("#all-notes").toggleClass("list-view");
+	function watchToggleViewGrid() {
+		$(document).on("click", "#view-toggle-grid", e => {
+			$(".filter-buttons.white").find("filter-button").removeClass("current");
+			$(e.target).addClass("current");
+			$("#all-notes").removeClass("list-view");
+		})
+	}
+
+	function watchToggleViewList() {
+		$(document).on("click", "#view-toggle-list", e => {
+			$(".filter-buttons.white").find("filter-button").removeClass("current");
+			$(e.target).addClass("current");
+			$("#all-notes").addClass("list-view");
 		})
 	}
 
