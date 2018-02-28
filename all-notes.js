@@ -153,7 +153,11 @@
 			const note = $(e.target).closest(".note");
 			const modalContainer = $(document.createElement("div")).addClass("modal-container");
 			let newNote = note.clone();
-			newNote.appendTo(modalContainer).find(".note-content").text(note.attr("content"));
+			let noteContent = newNote.find(".note-content");
+			newNote.appendTo(modalContainer);
+			noteContent.text(note.attr("content"));
+			addClassToHashtags(noteContent);
+			noteContent.linkify();
 			$(newNote.find("img").first()).attr("src", getHdVideoThumbnailUrl(note.attr("videoId")));
 			modalContainer.hide().appendTo($("body")).fadeIn();
 		});
