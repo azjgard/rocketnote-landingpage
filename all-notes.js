@@ -1,4 +1,5 @@
 (() => {
+	let allNotes = [];
 	linkify.options.defaults.format = function(value) {
 		return value.trunc(21);
 	};
@@ -7,9 +8,18 @@
 		const clientId = "hemjflepggljigpcaneoeldgipbpcbmg";
 
 		chrome.runtime.sendMessage(clientId, {context: "external", type: "getNotes"}, notes => {
-			notes.slice().reverse().map(({timestamp, createdAt, videoId, content, id}) => {
+			allNotes = notes;
+			notes.slice().reverse().map(({timestamp, createdAt, videoId, content, id, tags, meta, updatedAt}) => {
 				const thumbnailUrl = getVideoThumbnailUrl(videoId);
-				let newNote = $(".note").first().clone().attr({createdAt: createdAt, noteId: id}).show();
+				let newNote = $(".note").first().clone().attr({
+					createdAt,
+					noteId: id,
+					timestamp,
+					content,
+					tags,
+					updatedAt
+				}).show();
+
 				newNote.find(".note-timestamp").text(formatTimestamp(timestamp)).attr({
 					href: getTimestampedUrl(timestamp, videoId),
 					target: "_blank",
@@ -45,6 +55,7 @@
 	watchTagsForFilter();
 	watchToggleViewGrid();
 	watchToggleViewList();
+	watchShowFullNote();
 
 	function getVideoThumbnailUrl(videoId) {
 		return "https://i1.ytimg.com/vi/" + videoId + "/mqdefault.jpg";
@@ -129,6 +140,12 @@
 			$(".view-toggle").removeClass("current");
 			$(e.target).addClass("current");
 			$("#all-notes").addClass("list-view");
+		})
+	}
+
+	function watchShowFullNote() {
+		$(document).on("click", ".note-content", e => {
+			const note = $(e.target).closest(".note");
 		})
 	}
 

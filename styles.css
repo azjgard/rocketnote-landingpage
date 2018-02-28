@@ -94,6 +94,7 @@ code {
 }
 
 .note-content {
+	cursor: pointer;
 	display: inline;
 }
 
