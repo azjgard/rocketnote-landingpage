@@ -88,7 +88,7 @@
 	function watchSortByDateNewest() {
 		$(document).on("click", "#filter-newest-date", e => {
 			sortByDateNewest($(".note"));
-			$(".filter-button").removeClass("current");
+			$(".filter-buttons:not(.white).filter-button").removeClass("current");
 			$(e.target).addClass("current");
 		});
 	}
