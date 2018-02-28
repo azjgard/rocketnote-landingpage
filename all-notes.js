@@ -17,7 +17,8 @@
 					timestamp,
 					content,
 					tags,
-					updatedAt
+					updatedAt,
+					videoId
 				}).show();
 
 				newNote.find(".note-timestamp").text(formatTimestamp(timestamp)).attr({
@@ -148,11 +149,11 @@
 	}
 
 	function watchShowFullNote() {
-		$(document).on("click", ".note-content", e => {
+		$(document).on("click", "#all-notes .note-content", e => {
 			const note = $(e.target).closest(".note");
 			const modalContainer = $(document.createElement("div")).addClass("modal-container");
-			note.clone().appendTo(modalContainer).find(".note-content").text(note.attr("content"));
-			note.find(".note-body .video-thumbnail img").attr("src", getHdVideoThumbnailUrl(note.attr("videoId")));
+			let newNote = note.clone().appendTo(modalContainer).find(".note-content").text(note.attr("content"));
+			newNote.find(".note-body .video-thumbnail img").attr("src", getHdVideoThumbnailUrl(note.attr("videoId")));
 			modalContainer.hide().appendTo($("body")).fadeIn();
 		});
 
