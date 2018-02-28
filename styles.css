@@ -83,10 +83,13 @@ code {
 .note-body {
 	background-color: #efefef;
 	border-radius: 5px;
-	cursor: pointer;
 	height: 320px;
 	padding: 0 0 20px 0;
 	overflow: hidden;
+}
+
+.all-notes .note-body {
+	cursor: pointer;
 }
 
 .note-details {
