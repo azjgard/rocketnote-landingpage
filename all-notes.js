@@ -160,6 +160,10 @@
 		$(document).on("click", ".modal-container", () => {
 			$(".modal-container").fadeOut();
 		});
+
+		$(document).on("click", ".modal-container .note", e => {
+			e.stopPropagation();
+		});
 	}
 
 	const addClassToHashtags = note => {
