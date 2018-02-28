@@ -151,7 +151,7 @@
 		$(document).on("click", ".note-content", e => {
 			const note = $(e.target).closest(".note");
 			const modalContainer = $(document.createElement("div")).addClass("modal-container");
-			note.clone().appendTo(modalContainer).text(note.attr("content"));
+			note.clone().appendTo(modalContainer).find(".note-content").text(note.attr("content"));
 			note.find("img").attr("src", getHdVideoThumbnailUrl(note.attr("videoId")));
 			modalContainer.hide().appendTo($("body")).fadeIn();
 		})
