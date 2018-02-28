@@ -23,11 +23,7 @@
 }
 
 .inline-install.inline-added {
-	background-color: #3867a6;
-}
-
-.red-flat .inline-install.inline-added {
-	background-color: #414141;
+	background-color: #686868;
 }
 
 .faq-container {
