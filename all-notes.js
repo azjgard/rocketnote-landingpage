@@ -162,6 +162,12 @@
 			modalContainer.hide().appendTo($("body")).fadeIn();
 		});
 
+		$(document).on("keyup", e => {
+			if (e.keyCode === 27) {
+				$(".modal-container").fadeOut();
+			}
+		});
+
 		$(document).on("click", "#all-notes .note .video-thumbnail", e => {
 			e.stopPropagation();
 		});
