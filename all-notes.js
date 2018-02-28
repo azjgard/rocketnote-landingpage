@@ -149,13 +149,25 @@
 	}
 
 	function watchShowFullNote() {
-		$(document).on("click", "#all-notes .note-content", e => {
+		$(document).on("click", "#all-notes .note", e => {
 			const note = $(e.target).closest(".note");
 			const modalContainer = $(document.createElement("div")).addClass("modal-container");
 			let newNote = note.clone();
 			newNote.appendTo(modalContainer).find(".note-content").text(note.attr("content"));
 			$(newNote.find("img")).attr("src", getHdVideoThumbnailUrl(note.attr("videoId")));
 			modalContainer.hide().appendTo($("body")).fadeIn();
+		});
+
+		$(document).on("click", "#all-notes .note .video-thumbnail", e => {
+			e.stopPropagation();
+		});
+
+		$(document).on("click", "#all-notes .note .rn_tag", e => {
+			e.stopPropagation();
+		});
+
+		$(document).on("click", "#all-notes .note .note-timestamp", e => {
+			e.stopPropagation();
 		});
 
 		$(document).on("click", ".modal-container", () => {
