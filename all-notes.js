@@ -146,6 +146,9 @@
 	function watchShowFullNote() {
 		$(document).on("click", ".note-content", e => {
 			const note = $(e.target).closest(".note");
+			const modalContainer = $(document.createElement("div")).addClass("modal-container");
+			note.clone().appendTo(modalContainer);
+			modalContainer.hide().appendTo($("body")).fadeIn();
 		})
 	}
 

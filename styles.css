@@ -247,6 +247,24 @@ code {
 	color: #4ba4f6;
 }
 
+/*=== MODAL ===*/
+.modal-container {
+	background-color: rgba(0,0,0,.5);
+	height:100%;
+	position: fixed;
+	width: 100%;
+}
+
+.modal-container .note {
+	max-width: 480px;
+	text-align: left;
+	width: 480px;
+}
+
+.modal-container .note .note-body {
+	height: 480px;
+}
+
 /*=== MEDIA QUERIES ===*/
 
 @media (max-width: 768px) {
