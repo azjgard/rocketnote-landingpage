@@ -199,15 +199,8 @@
 	</div>
 </footer>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script>
-	if (document.getElementById('rn_extension-is-installed')) {
-		console.log("Extension is installed!");
-		let inlineInstallButtons = $(".inline-install");
-		inlineInstallButtons.addClass("inline-added");
-		inlineInstallButtons.find("span").text("Added To Chrome").off();
-	}
-</script>
 <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
 <script type="text/javascript" src="identity.js"></script>
+<script type="text/javascript" src="extension-installed-check.js" defer></script>
 </body>
 </html>
