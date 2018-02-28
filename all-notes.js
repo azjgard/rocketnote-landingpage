@@ -61,6 +61,10 @@
 		return "https://i1.ytimg.com/vi/" + videoId + "/mqdefault.jpg";
 	}
 
+	function getHdVideoThumbnailUrl(videoId) {
+		return "https://i1.ytimg.com/vi/" + videoId + "/maxresdefault.jpg";
+	}
+
 	const formatTimestamp = timestamp => {
 		return String(moment.utc(timestamp * 1000).format('mm:ss'));
 	};
@@ -147,7 +151,8 @@
 		$(document).on("click", ".note-content", e => {
 			const note = $(e.target).closest(".note");
 			const modalContainer = $(document.createElement("div")).addClass("modal-container");
-			note.clone().appendTo(modalContainer);
+			note.clone().appendTo(modalContainer).text(note.attr("content"));
+			note.find("img").attr("src", getHdVideoThumbnailUrl(note.attr("videoId")));
 			modalContainer.hide().appendTo($("body")).fadeIn();
 		})
 	}
