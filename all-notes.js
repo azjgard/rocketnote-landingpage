@@ -164,8 +164,12 @@
 
 		$(document).on("keyup", e => {
 			if (e.keyCode === 27) {
-				$(".modal-container").fadeOut();
+				$(".modal-container").fadeOut(() => $(this).remove());
 			}
+		});
+
+		$(document).on("click", ".modal-container", () => {
+			$(".modal-container").fadeOut(() => $(this).remove());
 		});
 
 		$(document).on("click", "#all-notes .note .video-thumbnail", e => {
@@ -175,13 +179,8 @@
 		$(document).on("click", "#all-notes .note .rn_tag", e => {
 			e.stopPropagation();
 		});
-
 		$(document).on("click", "#all-notes .note .note-timestamp", e => {
 			e.stopPropagation();
-		});
-
-		$(document).on("click", ".modal-container", () => {
-			$(".modal-container").fadeOut();
 		});
 
 		$(document).on("click", ".modal-container .note", e => {
