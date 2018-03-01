@@ -164,12 +164,14 @@
 
 		$(document).on("keyup", e => {
 			if (e.keyCode === 27) {
-				$(".modal-container").fadeOut(() => $(this).remove());
+				let modalContainer = $(".modal-container");
+				modalContainer.fadeOut(() => modalContainer.remove());
 			}
 		});
 
 		$(document).on("click", ".modal-container", () => {
-			$(".modal-container").fadeOut(() => $(this).remove());
+			let modalContainer = $(".modal-container");
+			modalContainer.fadeOut(() => modalContainer.remove());
 		});
 
 		$(document).on("click", "#all-notes .note .video-thumbnail", e => {
