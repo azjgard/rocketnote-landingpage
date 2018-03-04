@@ -144,7 +144,9 @@ code {
 }
 
 .all-notes.list-view .thumbtack-container {
+	margin-left: 50px;
 	margin-top: -30px;
+	text-align: left;
 }
 
 .thumbtack-container {
