@@ -284,6 +284,10 @@ code {
 	margin-bottom: 40px;
 }
 
+code.fix {
+	color: #e2a828;
+}
+
 /*=== MEDIA QUERIES ===*/
 
 @media (max-width: 768px) {
