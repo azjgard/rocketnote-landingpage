@@ -7,27 +7,37 @@
 
 <url>
   <loc>https://getrocketnote.com/</loc>
-  <lastmod>2018-03-06T19:55:49+00:00</lastmod>
+  <lastmod>2018-03-06T21:38:12+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://getrocketnote.com/notes</loc>
-  <lastmod>2018-03-06T19:55:49+00:00</lastmod>
+  <lastmod>2018-03-06T21:38:12+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://getrocketnote.com/FAQ</loc>
-  <lastmod>2018-03-06T19:55:49+00:00</lastmod>
+  <lastmod>2018-03-06T21:38:12+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://getrocketnote.com/keyboard-shortcuts</loc>
-  <lastmod>2018-03-06T19:55:49+00:00</lastmod>
+  <lastmod>2018-03-06T21:38:12+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://getrocketnote.com/changelog</loc>
   <lastmod>2018-03-06T19:55:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://getrocketnote.com/terms-of-service</loc>
+  <lastmod>2018-03-06T21:38:12+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://getrocketnote.com/privacy-policy</loc>
+  <lastmod>2018-03-06T21:38:12+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
