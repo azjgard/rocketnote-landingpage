@@ -276,6 +276,14 @@ code {
 	height: 480px;
 }
 
+.checklist-section {
+	padding: 40px 0;
+}
+
+.checklist-section .container {
+	margin-bottom: 40px;
+}
+
 /*=== MEDIA QUERIES ===*/
 
 @media (max-width: 768px) {
