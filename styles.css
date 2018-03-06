@@ -284,8 +284,22 @@ code {
 	margin-bottom: 40px;
 }
 
+/*=== RANDOM TWEAKS ===*/
+
 code.fix {
 	color: #e2a828;
+}
+
+.privacy p {
+	margin: 10px 0;
+}
+
+.privacy ul {
+	margin-left: 40px;
+}
+
+.privacy .address-line {
+	margin: 0;
 }
 
 /*=== MEDIA QUERIES ===*/
