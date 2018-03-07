@@ -158,6 +158,27 @@ code {
 	margin-top: 20px;
 }
 
+.edit-actions {
+	bottom: 0;
+	height: 50px;
+	left: 0;
+	position: absolute;
+}
+
+.edit-action {
+	height: 100%;
+	display: inline-block;
+	width: 50%;
+}
+
+.edit-action img {
+	height: 22px;
+	left: 50%;
+	position: relative;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
 .filter-buttons {
 	background-color: #e41e35;
 	color: #fefefe;
