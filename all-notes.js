@@ -198,9 +198,12 @@ $(() => {
 
 	function watchDeleteButtons() {
 		$(document).on("click", ".rn_delete-button", e => {
+			const clientId = "hemjflepggljigpcaneoeldgipbpcbmg";
 			let note = $(e.target).closest(".note");
 			let noteId = note.attr("noteId");
 
+			note.fadeOut();
+			$("note[noteId='" + noteId + "']").remove();
 			chrome.runtime.sendMessage(clientId, {context: "external", type: "deleteNote", noteId});
 		});
 	}
