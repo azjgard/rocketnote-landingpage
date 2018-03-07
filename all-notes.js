@@ -1,6 +1,6 @@
-(() => {
+$(() => {
 	let allNotes = [];
-	linkify.options.defaults.format = function(value) {
+	linkify.options.defaults.format = function (value) {
 		return value.trunc(21);
 	};
 
@@ -57,6 +57,8 @@
 	watchToggleViewGrid();
 	watchToggleViewList();
 	watchShowFullNote();
+	watchDeleteButtons();
+	watchEditButtons();
 
 	function getVideoThumbnailUrl(videoId) {
 		return "https://i1.ytimg.com/vi/" + videoId + "/mqdefault.jpg";
@@ -155,6 +157,7 @@
 			let newNote = note.clone();
 			let noteContent = newNote.find(".note-content");
 			newNote.appendTo(modalContainer);
+			addEditActions(newNote);
 			noteContent.text(note.attr("content"));
 			addClassToHashtags(noteContent);
 			noteContent.linkify();
@@ -174,19 +177,42 @@
 			modalContainer.fadeOut(() => modalContainer.remove());
 		});
 
-		$(document).on("click", "#all-notes .note .video-thumbnail", e => {
+		$(document).on("click", "#all-notes .note .video-thumbnail, #all-notes .note .rn_tag, #all-notes .note .note-timestamp, .modal-container .note", e => {
 			e.stopPropagation();
 		});
+	}
 
-		$(document).on("click", "#all-notes .note .rn_tag", e => {
-			e.stopPropagation();
-		});
-		$(document).on("click", "#all-notes .note .note-timestamp", e => {
-			e.stopPropagation();
-		});
+	const addEditActions = noteElements => {
+		let editActions = $(document.createElement("div")).addClass("edit-actions");
+		let editButton = $(document.createElement("div")).attr({class: "edit-action rn_edit-button"});
+		let deleteButton = $(document.createElement("div")).attr({class: "edit-action rn_delete-button"});
+		let editIcon = $(document.createElement("img")).attr({src: "assets/img/edit.svg"});
+		let trashIcon = $(document.createElement("img")).attr({src: "assets/img/trash.svg"});
 
-		$(document).on("click", ".modal-container .note", e => {
-			e.stopPropagation();
+		editButton.append(editIcon);
+		deleteButton.append(trashIcon);
+		editActions.append([editButton, deleteButton]);
+
+		noteElements.append(editActions);
+	};
+
+	function watchDeleteButtons() {
+		$(document).on("click", ".rn_delete-button", e => {
+			let note = $(e.target).closest(".note");
+			let noteId = note.attr("noteId");
+
+			chrome.runtime.sendMessage(clientId, {context: "external", type: "deleteNote", noteId});
+		});
+	}
+
+	function watchEditButtons() {
+		$(document).on("click", ".rn_edit-button", e => {
+			let note = $(e.target).closest(".note");
+			let noteId = note.attr("noteId");
+			let noteContent = note.find(".note-content");
+
+			noteContent.attr("contenteditable", "true");
+			note.addClass("edit");
 		});
 	}
 
@@ -199,4 +225,4 @@
 	String.prototype.trunc = function (n) {
 		return (this.length > n) ? this.substr(0, n - 1) + '...' : this;
 	};
-})();
+});
