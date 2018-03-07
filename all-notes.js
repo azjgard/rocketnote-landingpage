@@ -203,7 +203,7 @@ $(() => {
 			let noteId = note.attr("noteId");
 
 			note.parent().fadeOut();
-			$("note[noteId='" + noteId + "']").remove();
+			$(".all-notes .note[noteId='" + noteId + "']").remove();
 			chrome.runtime.sendMessage(clientId, {context: "external", type: "deleteNote", noteId});
 		});
 	}
