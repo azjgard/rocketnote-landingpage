@@ -186,16 +186,18 @@ $(() => {
 		let editActions = $(document.createElement("div")).addClass("edit-actions");
 		let editButton = $(document.createElement("div")).attr({class: "edit-action rn_edit-button"});
 		let deleteButton = $(document.createElement("div")).attr({class: "edit-action rn_delete-button"});
-		let editIcon = $(document.createElement("img")).attr({src: "assets/img/edit.svg"});
+		// let editIcon = $(document.createElement("img")).attr({src: "assets/img/edit.svg"});
 		let trashIcon = $(document.createElement("img")).attr({src: "assets/img/trash.svg"});
 
-		editButton.append(editIcon);
+		// editButton.append(editIcon);
 		deleteButton.append(trashIcon);
-		editActions.append([editButton, deleteButton]);
-
+		// editActions.append([editButton, deleteButton]);
+		editactions.append(deleteButton);
 		noteElements.append(editActions);
 	};
 
+	//TODO: ADD SELECTING NOTES AND APPLYING ACTIONS
+	//TODO: ADD CONFIRMATION
 	function watchDeleteButtons() {
 		$(document).on("click", ".rn_delete-button", e => {
 			const clientId = "hemjflepggljigpcaneoeldgipbpcbmg";
@@ -208,16 +210,18 @@ $(() => {
 		});
 	}
 
-	function watchEditButtons() {
-		$(document).on("click", ".rn_edit-button", e => {
-			let note = $(e.target).closest(".note");
-			let noteId = note.attr("noteId");
-			let noteContent = note.find(".note-content");
-
-			noteContent.attr("contenteditable", "true");
-			note.addClass("edit");
-		});
-	}
+	//TODO: MAKE THIS WORK BY ALLOWING EDITING
+	// function watchEditButtons() {
+	// 	$(document).on("click", ".rn_edit-button", e => {
+	// 		let note = $(e.target).closest(".note");
+	// 		let noteId = note.attr("noteId");
+	// 		let noteContent = note.find(".note-content");
+	//
+	// 		noteContent.attr("contenteditable", "true");
+	// 		note.addClass("edit");
+	// 	});
+	// }
+	//TODO: Add edit functionality.
 
 	const addClassToHashtags = note => {
 		note.html(function (_, html) {
