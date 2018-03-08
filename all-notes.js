@@ -192,7 +192,7 @@ $(() => {
 		// editButton.append(editIcon);
 		deleteButton.append(trashIcon);
 		// editActions.append([editButton, deleteButton]);
-		editactions.append(deleteButton);
+		editActions.append(deleteButton);
 		noteElements.append(editActions);
 	};
 
