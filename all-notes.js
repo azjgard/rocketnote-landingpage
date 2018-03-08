@@ -58,7 +58,7 @@ $(() => {
 	watchToggleViewList();
 	watchShowFullNote();
 	watchDeleteButtons();
-	watchEditButtons();
+	// watchEditButtons();
 
 	function getVideoThumbnailUrl(videoId) {
 		return "https://i1.ytimg.com/vi/" + videoId + "/mqdefault.jpg";
