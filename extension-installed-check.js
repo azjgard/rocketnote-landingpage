@@ -6,6 +6,7 @@ $(() => {
 			inlineInstallButtons.find("span").text("Added To Chrome");
 			$("#login-button").show();
 		} else {
+			$("#login-button").hide();
 			inlineInstallButtons.click(() => {
 				chrome.webstore.install();
 			});
