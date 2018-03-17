@@ -1,6 +1,7 @@
 
 .not-chrome {
   padding: 20px;
+  display: none;
 }
 
 #feature-1 {

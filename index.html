@@ -238,6 +238,13 @@ var isMobile = window.mobilecheck();
 
 if (isMobile || !/chrome/i.test(agent)) {
   var installers = document.querySelectorAll('.inline-install');
+  var messages = document.querySelectorAll('.not-chrome');
+
+  for (var i = 0; i < messages.length; i++) {
+    var message = messages[i];
+
+    message.style.display = "block";
+  }
 
   for (var i = 0; i < installers.length; i++) {
     var installer = installers[i];
