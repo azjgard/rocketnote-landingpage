@@ -86,7 +86,7 @@
 				</div>
     <h4 class="not-chrome">
       Please switch to a desktop computer running the Google Chrome browser
-      to download our app.
+      to download the app.
     </h4>
 			</div>
 		</div>
@@ -180,7 +180,7 @@
 		</div>
     <h4 class="not-chrome">
       Please switch to a desktop computer running the Google Chrome browser
-      to download our app.
+      to download the app.
     </h4>
 	</div>
 </section>
@@ -243,6 +243,8 @@ if (isMobile || !/chrome/i.test(agent)) {
     var installer = installers[i];
     installer.style.pointerEvents = 'none';
     installer.style.backgroundColor = '#555';
+    installer.style.padding = '15px 0';
+    installer.style.fontSize = '11px';
     installer.style.opacity = '.6';
     installer.textContent = 'Only available on Chrome for Desktop';
   }
