@@ -1,3 +1,8 @@
+
+.not-chrome {
+  padding: 20px;
+}
+
 #feature-1 {
 	border-top: 150px solid #e41e35;
 	padding-top: 250px;
