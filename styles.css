@@ -321,12 +321,30 @@ code.fix {
 	margin: 10px 0;
 }
 
-.privacy ul {
+.privacy ul,
+.faq ol {
 	margin-left: 40px;
 }
 
 .privacy .address-line {
 	margin: 0;
+}
+
+.onboard-step img:first-child,
+.onboard-step div:first-child {
+	margin-top: 15px;
+}
+
+.onboard-step img {
+	border-radius: 3px;
+	-webkit-box-shadow: 4px 6px 14px 2px rgba(0, 0, 0, .1);
+	box-shadow: 4px 6px 14px 2px rgba(0, 0, 0, .1);
+	margin-bottom: 15px;
+}
+
+.onboard-step:last-of-type {
+	background-color: #f6f6f6;
+	margin-top: 30px;
 }
 
 /*=== MEDIA QUERIES ===*/

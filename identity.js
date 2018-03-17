@@ -18,7 +18,7 @@
 		}
 	});
 
-	$(document).on("click", "#login-button", () => {
+	$(document).on("click", ".login-button", () => {
 		chrome.runtime.sendMessage(clientId, {context: "external", type: "login"}, isLoggedIn => {
 			Cookies.set("auth", isLoggedIn ? "true" : "false");
 			let authCheck = setInterval(() => {
@@ -33,7 +33,7 @@
 		});
 	});
 
-	$(document).on("click", "#logout-button", () => {
+	$(document).on("click", ".logout-button", () => {
 		chrome.runtime.sendMessage(clientId, {context: "external", type: "logout"}, isLoggedIn => {
 			Cookies.set("auth", isLoggedIn ? "true" : "false");
 			window.location.reload();
