@@ -4,6 +4,12 @@
   display: none;
 }
 
+.inline-install {
+  display: block;
+  max-width: 350px;
+  margin: auto;
+}
+
 #feature-1 {
 	border-top: 150px solid #e41e35;
 	padding-top: 250px;
