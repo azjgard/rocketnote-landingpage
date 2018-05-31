@@ -359,6 +359,80 @@ code.fix {
 	margin-top: 30px;
 }
 
+.button-group-toggle .radio-toggle {
+	display: none;
+}
+
+input[type=checkbox], input[type=radio] {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 4px 0 0;
+	line-height: normal;
+}
+
+.button-group-toggle input[type=radio]:checked+label.button-toggle.green {
+	background-color: #4791df;
+	box-shadow: none;
+	color: #fefefe;
+}
+
+.button-group-toggle .button-toggle.left {
+	border-radius: 3px 0 0 3px;
+}
+
+.button-group-toggle .button-toggle.green {
+	color: #4791df;
+	width: 9rem;
+}
+
+.button-group-toggle .button-toggle {
+	box-shadow: inset 0 0.1rem 0.5rem 0 rgba(0,0,0,.25);
+	background-color: #fefefe;
+	color: #ccc;
+	padding: .5rem 0;
+	text-align: center;
+	width: 50%;
+	font-family: roboto, serif;
+	font-weight: 700;
+}
+
+.button-base, .button-base-no-extra-padding {
+	border: 0;
+	border-radius: 3px;
+	color: #fefefe;
+	cursor: pointer;
+	display: inline-block;
+	font-family: Montserrat,"Arial Black",Arial,sans-serif;
+	margin-bottom: 2rem;
+	transition: background-color .125s ease;
+}
+
+.button-group-toggle .button-toggle.right {
+	border-radius: 0 3px 3px 0;
+	display: inline-block;
+	margin-left: -.5rem;
+}
+
+label {
+	display: inline-block;
+	max-width: 100%;
+	margin-bottom: 5px;
+	color: #fefefe;
+	font-weight: 300;
+}
+
+.pricing li {
+	text-align: left;
+}
+
+.pricing .coming-soon {
+	color: #a8a8a8;
+}
+
+.pricing .coming-soon.svg-fill {
+	fill: rgba(228, 30, 53, 0.68);
+}
+
 /*=== MEDIA QUERIES ===*/
 
 @media (max-width: 768px) {
