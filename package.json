@@ -1,0 +1,20 @@
+{
+  "name": "rockenote-landingpage",
+  "version": "1.0.0",
+  "description": "Pushing to this repository will deploy your changes to the server. The live site can currently be accessed [here](http://ec2-54-218-120-214.us-west-2.compute.amazonaws.com/)",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./*.html ./*.js ./*.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azjgard/rocketnote-landingpage.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/azjgard/rocketnote-landingpage/issues"
+  },
+  "homepage": "https://github.com/azjgard/rocketnote-landingpage#readme"
+}
