@@ -11,6 +11,7 @@
 		if (userProfile.email) {
 			convertfox.identify(userProfile.email);
 			Cookies.set('auth', 'true');
+			Cookies.set('identity', userProfile.email);
 			changeNavStateToLoggedIn();
 		} else {
 			Cookies.set('auth', 'false');
@@ -26,6 +27,7 @@
 					if (userProfile.email) {
 						clearInterval(authCheck);
 						Cookies.set("auth", "true");
+						Cookies.set('identity', userProfile.email);
 						window.location.replace("/notes");
 					}
 				});
