@@ -12,7 +12,6 @@
 			convertfox.identify(userProfile.email);
 			Cookies.set('auth', 'true');
 			Cookies.set('identity', userProfile.email);
-			console.log(userProfile.email);
 			changeNavStateToLoggedIn();
 		} else {
 			Cookies.set('auth', 'false');

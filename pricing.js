@@ -5,6 +5,5 @@
         $(".paddle_button").attr("data-email", identity);
     } else {
         console.log("Can't do it, man!");
-        console.log(identity);
     }
 })();
