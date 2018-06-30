@@ -436,6 +436,13 @@ label {
 	background-color: #4791df;
 }
 
+label[for="yearly"]::after {
+	content: "SAVE 33% with yearly!";
+	color: #e41e35;
+	position: absolute;
+	margin-left: 65px;
+}
+
 /*=== MEDIA QUERIES ===*/
 
 @media (max-width: 768px) {
