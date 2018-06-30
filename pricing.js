@@ -1,11 +1,11 @@
 (() => {
-    let identity = Cookies.get('identity');
-
-    if (identity) {
-        $(".paddle_button").attr("data-email", identity);
-    } else {
-        console.log("Can't do it, man!");
-    }
+    // let identity = Cookies.get('identity');
+    //
+    // if (identity) {
+    //     $(".paddle_button").attr("data-email", identity);
+    // } else {
+    //     console.log("Can't do it, man!");
+    // }
 
     $("input[name='selected-service']").change(function(e) {
         if ($(e.target).attr('id') === 'yearly') {
