@@ -18,4 +18,9 @@
             $("#checkout-unlimited").attr("data-product", "531765");
         }
     });
+
+    if (document.referrer.match(/^https?:\/\/([^\/]+\.)?producthunt\.com(\/|$)/i)) {
+        $("#checkout-unlimited").attr("data-coupon", "PHF4M");
+        console.log("Referred from PH.");
+    }
 })();
