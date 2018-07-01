@@ -53,4 +53,16 @@
 		$("#logout-button").hide();
 		$("#nav-notes").hide();
 	}
+
+    if (document.referrer.match(/^https?:\/\/([^\/]+\.)?producthunt\.com(\/|$)/i)) {
+        let unlimitedButton = $("#checkout-unlimited");
+
+        if (unlimitedButton) {
+            $(unlimitedButton).attr("data-coupon", "PHF4M");
+        }
+
+        localStorage.setItem("site_referrer", "Product Hunt");
+
+        console.log("Referred from PH.");
+    }
 })();

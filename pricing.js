@@ -19,8 +19,7 @@
         }
     });
 
-    if (document.referrer.match(/^https?:\/\/([^\/]+\.)?producthunt\.com(\/|$)/i)) {
+    if (localStorage.getItem("site_referrer") === "Product Hunt") {
         $("#checkout-unlimited").attr("data-coupon", "PHF4M");
-        console.log("Referred from PH.");
     }
 })();
