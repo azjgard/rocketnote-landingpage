@@ -456,9 +456,11 @@ label[for="yearly"]::after {
 	display: none;
 }
 
-#coupon-bar span {
+#coupon-bar span,
+#coupon-bar span a {
 	color: #fefefe;
 	font-weight: 700;
+	cursor: pointer;
 }
 
 #coupon-bar .close-btn {
