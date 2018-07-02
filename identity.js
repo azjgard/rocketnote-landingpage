@@ -1,7 +1,9 @@
 (() => {
 	const clientId = "hemjflepggljigpcaneoeldgipbpcbmg";
 
-	if (Cookies.get("auth") === "true") {
+	$("#coupon-bar").hide();
+
+    if (Cookies.get("auth") === "true") {
 		changeNavStateToLoggedIn();
 	} else {
 		changeNavStateToLoggedOut();
@@ -65,4 +67,14 @@
 
         console.log("Referred from PH.");
     }
+
+    if (localStorage.getItem("site_referrer") === "Product Hunt") {
+        $("#coupon-bar").show();
+    } else {
+		$("#coupon-bar").hide();
+	}
+
+	$("#checkout-unlimited").click(function() {
+		localStorage.setItem("site_referrer", null);
+	})
 })();

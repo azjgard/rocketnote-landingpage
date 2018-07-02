@@ -443,6 +443,23 @@ label[for="yearly"]::after {
 	margin-left: 65px;
 }
 
+#coupon-bar {
+	background-color: #ea532a;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	min-width: 100%;
+	padding: 5px;
+	text-align: center;
+	z-index: 1000000;
+}
+
+#coupon-bar span {
+	color: #fefefe;
+	font-weight: 700;
+}
+
 /*=== MEDIA QUERIES ===*/
 
 @media (max-width: 768px) {
