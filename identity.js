@@ -76,7 +76,7 @@
 	}
 
 	$("#checkout-unlimited").click(function() {
-		localStorage.setItem("site_referrer", null);
+		localStorage.setItem("button_closed", "true");
 	});
 
 	$("#coupon-bar").find(".close-btn").click(function() {
