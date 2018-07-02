@@ -453,6 +453,7 @@ label[for="yearly"]::after {
 	padding: 5px;
 	text-align: center;
 	z-index: 1000000;
+	display: none;
 }
 
 #coupon-bar span {
@@ -466,6 +467,8 @@ label[for="yearly"]::after {
 	top: 50%;
 	transform: translateY(-50%);
 	color: #fefefe;
+	cursor: pointer;
+	font-weight: bold;
 }
 
 /*=== MEDIA QUERIES ===*/
