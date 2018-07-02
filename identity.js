@@ -64,11 +64,12 @@
         }
 
         localStorage.setItem("site_referrer", "Product Hunt");
+        localStorage.setItem("button_closed", "false");
 
         console.log("Referred from PH.");
     }
 
-    if (localStorage.getItem("site_referrer") === "Product Hunt") {
+    if (localStorage.getItem("site_referrer") === "Product Hunt" && localStorage.getItem("button_closed") !== "true") {
         $("#coupon-bar").show();
     } else {
 		$("#coupon-bar").hide();
@@ -79,7 +80,7 @@
 	});
 
 	$("#coupon-bar").find(".close-btn").click(function() {
-		localStorage.setItem("site_referrer", null);
+		localStorage.setItem("button_closed", "true");
 		$("#coupon-bar").hide();
 	});
 })();
