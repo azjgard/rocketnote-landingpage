@@ -76,5 +76,10 @@
 
 	$("#checkout-unlimited").click(function() {
 		localStorage.setItem("site_referrer", null);
-	})
+	});
+
+	$("#coupon-bar").find(".close-btn").click(function() {
+		localStorage.setItem("site_referrer", null);
+		$("#coupon-bar").hide();
+	});
 })();

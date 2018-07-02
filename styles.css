@@ -460,6 +460,14 @@ label[for="yearly"]::after {
 	font-weight: 700;
 }
 
+#coupon-bar .close-btn {
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #fefefe;
+}
+
 /*=== MEDIA QUERIES ===*/
 
 @media (max-width: 768px) {
