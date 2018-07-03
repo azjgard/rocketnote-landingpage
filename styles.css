@@ -484,4 +484,18 @@ label[for="yearly"]::after {
 	.browser {
 		display: none;
 	}
+
+	label[for="yearly"]::after {
+		color: #e41e35;
+		position: absolute;
+		margin-top: 35px;
+		width: 200px;
+		left: 50%;
+		transform: translateX(-50%);
+		margin-left: 0;
+	}
+
+	.button-group-toggle .button-toggle.right {
+		margin-bottom: 40px;
+	}
 }
