@@ -63,24 +63,24 @@
             $(unlimitedButton).attr("data-coupon", "PHF4M");
         }
 
-        localStorage.setItem("site_referrer", "Product Hunt");
-        localStorage.setItem("button_closed", "false");
+        Cookies.set("site_referrer", "Product Hunt");
+        Cookies.set("button_closed", "false");
 
         console.log("Referred from PH.");
     }
 
-    if (localStorage.getItem("site_referrer") === "Product Hunt" && localStorage.getItem("button_closed") !== "true") {
+    if (Cookies.get("site_referrer") === "Product Hunt" && Cookies.get("button_closed") !== "true") {
         $("#coupon-bar").show();
     } else {
 		$("#coupon-bar").hide();
 	}
 
 	$("#checkout-unlimited").click(function() {
-		localStorage.setItem("button_closed", "true");
+		Cookies.set("button_closed", "true");
 	});
 
 	$("#coupon-bar").find(".close-btn").click(function() {
-		localStorage.setItem("button_closed", "true");
+		Cookies.set("button_closed", "true");
 		$("#coupon-bar").hide();
 	});
 })();

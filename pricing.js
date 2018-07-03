@@ -19,7 +19,7 @@
         }
     });
 
-    if (localStorage.getItem("site_referrer") === "Product Hunt") {
+    if (Cookies.get("site_referrer") === "Product Hunt") {
         $("#checkout-unlimited").attr("data-coupon", "PHF4M");
     }
 })();
