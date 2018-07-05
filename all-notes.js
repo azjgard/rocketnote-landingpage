@@ -18,7 +18,8 @@ $(() => {
 					content,
 					tags,
 					updatedAt,
-					videoId
+					videoId,
+					share_code: meta.public_share_code,
 				}).show();
 
 				newNote.find(".note-timestamp").text(formatTimestamp(timestamp)).attr({
@@ -58,6 +59,7 @@ $(() => {
 	watchToggleViewList();
 	watchShowFullNote();
 	watchDeleteButtons();
+	watchLinkButtons();
 	// watchEditButtons();
 
 	function getVideoThumbnailUrl(videoId) {
@@ -186,13 +188,16 @@ $(() => {
 		let editActions = $(document.createElement("div")).addClass("edit-actions");
 		let editButton = $(document.createElement("div")).attr({class: "edit-action rn_edit-button"});
 		let deleteButton = $(document.createElement("div")).attr({class: "edit-action rn_delete-button"});
+		let linkButton = $(document.createElement("div")).attr({class: "edit-action rn_link-button"});
 		// let editIcon = $(document.createElement("img")).attr({src: "assets/img/edit.svg"});
 		let trashIcon = $(document.createElement("img")).attr({src: "assets/img/trash.svg"});
+		let linkIcon = $(document.createElement("img")).attr({src: "assets/img/link_icon.svg"});
 
 		// editButton.append(editIcon);
 		deleteButton.append(trashIcon);
 		// editActions.append([editButton, deleteButton]);
 		editActions.append(deleteButton);
+		editActions.append(linkButton);
 		noteElements.append(editActions);
 	};
 
@@ -209,6 +214,36 @@ $(() => {
 			chrome.runtime.sendMessage(clientId, {context: "external", type: "deleteNote", noteId});
 		});
 	}
+
+    function watchLinkButtons() {
+        $(document).on("click", ".rn_link-button", e => {
+            let note = $(e.target).closest(".note");
+            let shareCode = note.attr("share_code");
+            let shareLink = "https://getrocketnote.com/share?share_url=" + shareCode;
+
+            copyToClipboard(shareLink);
+        });
+    }
+
+    const copyToClipboard = str => {
+        const el = document.createElement('textarea');  // Create a <textarea> element
+        el.value = str;                                 // Set its value to the string that you want copied
+        el.setAttribute('readonly', '');                // Make it readonly to be tamper-proof
+        el.style.position = 'absolute';
+        el.style.left = '-9999px';                      // Move outside the screen to make it invisible
+        document.body.appendChild(el);                  // Append the <textarea> element to the HTML document
+        const selected =
+            document.getSelection().rangeCount > 0        // Check if there is any content selected previously
+                ? document.getSelection().getRangeAt(0)     // Store selection if found
+                : false;                                    // Mark as false to know no selection existed before
+        el.select();                                    // Select the <textarea> content
+        document.execCommand('copy');                   // Copy - only works as a result of a user action (e.g. click events)
+        document.body.removeChild(el);                  // Remove the <textarea> element
+        if (selected) {                                 // If a selection existed before copying
+            document.getSelection().removeAllRanges();    // Unselect everything on the HTML document
+            document.getSelection().addRange(selected);   // Restore the original selection
+        }
+    };
 
 	//TODO: MAKE THIS WORK BY ALLOWING EDITING
 	// function watchEditButtons() {
