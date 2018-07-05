@@ -46,49 +46,6 @@
 </head>
 
 <body class="font-modern">
-<script>
-    // 2. This code loads the IFrame Player API code asynchronously.
-    var tag = document.createElement('script');
-
-    tag.src = "https://www.youtube.com/iframe_api";
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-    // 3. This function creates an <iframe> (and YouTube player)
-    //    after the API code downloads.
-    var player;
-
-    function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
-            height: '390',
-            width: '640',
-            videoId: null,
-            events: {
-                'onReady': onPlayerReady,
-                'onStateChange': onPlayerStateChange
-            }
-        });
-    }
-
-    // 4. The API will call this function when the video player is ready.
-    function onPlayerReady(event) {
-        event.target.playVideo();
-    }
-
-    // 5. The API calls this function when the player's state changes.
-    //    The function indicates that when playing a video (state=1),
-    //    the player should play for six seconds and then stop.
-    var done = false;
-    function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.PLAYING && !done) {
-            setTimeout(stopVideo, 6000);
-            done = true;
-        }
-    }
-    function stopVideo() {
-        player.stopVideo();
-    }
-</script>
 <div class="red-flat">
     <!---->
     <header class="header">
@@ -118,7 +75,7 @@
     <section class="section">
         <div class="container mb40">
             <div class="col-12 text-center">
-                <h1 class="heading-lrg primary-color ">Shared Note</h1>
+                <h1 class="heading-lrg primary-color ">Shared Notes</h1>
                 <h2 class="subheading secondary-color mt20 ">You are viewing a note that was shared with you.</h2>
                 <!---->
             </div>
@@ -130,15 +87,16 @@
     <div class="container">
         <div class="col-12 text-center">
             <h3 class="heading primary-color ">
-                Here's a cool note that your friend shared with you. :)
+                Here's a cool note from <br><span id="sharer-name">your friend</span>!
             </h3>
             <!---->
         </div>
     </div>
     <div class="container">
         <div class="col-12 mt40" style="text-align:center;">
-            <div id="player"></div>
-            <div id="note-content"></div>
+            <div id="player-container"></div>
+            <div id="note-share-content" class="note-share-content"></div>
+            <div id="note-share-date" class="note-share-date"></div>
         </div>
     </div>
 </section>
@@ -170,41 +128,10 @@
     </div>
 </footer>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
 <script type="text/javascript" src="identity.js"></script>
+<script type="text/javascript" src="share.js"></script>
 <script type="text/javascript" src="extension-installed-check.js"></script>
-<script defer>
-    $(function() {
-        document.getElementById("player").style.display = "none";
-        let playerSetup = setInterval(clearIntervalIfReady, 300);
-
-        function clearIntervalIfReady() {
-            if (document.getElementById("player").src === 'https://www.youtube.com/embed/null?enablejsapi=1&widgetid=1') {
-                setVideoIdFromShareUrl();
-                document.getElementById("player").style.display = "inline-block";
-            } else {
-                clearInterval(playerSetup);
-            }
-        }
-
-        function setVideoIdFromShareUrl() {
-            $.get('https://api.getrocketnote.com/v1/notes/share?share_url=' + getParameterByName('share_url'), function(result) {
-                document.getElementById("player").src = "https://www.youtube.com/embed/" + result[0].videoId + "?enablejsapi=1&widgetid=1&start=" + result[0].timestamp;
-                window.note = result[0];
-                $("#note-content").text(window.note.content);
-            });
-        }
-
-        function getParameterByName(name, url) {
-            if (!url) url = window.location.href;
-            name = name.replace(/[\[\]]/g, "\\$&");
-            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-                results = regex.exec(url);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, " "));
-        }
-    });
-</script>
 </body>
 </html>
