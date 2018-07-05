@@ -197,7 +197,7 @@ $(() => {
 		deleteButton.append(trashIcon);
         // editActions.append([editButton, deleteButton]);
 		editActions.append(deleteButton);
-		if (noteElements.attr("share_code").length > 0) {
+		if (noteElements.attr("share_code")) {
             linkButton.append(linkIcon);
             editActions.append(linkButton);
         }
