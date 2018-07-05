@@ -18,6 +18,9 @@ $(function() {
             $("#note-share-content").text(formatTimestamp(window.note.timestamp) + " " + window.note.content);
             $("#sharer-name").text(window.note.meta.userChannel);
             $("#note-share-date").text(moment(window.note.createdAt).fromNow()).attr("tooltip", moment(window.note.created).format('MMMM Do YYYY, h:mm a'));
+            if (window.note.meta.userChannel.length > 0) {
+                document.title = window.note.meta.userChannel + "'s Shared Note | Rocket Note"
+            }
         });
     }
 
