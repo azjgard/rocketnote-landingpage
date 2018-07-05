@@ -188,7 +188,7 @@ $(() => {
 		let editActions = $(document.createElement("div")).addClass("edit-actions");
 		let editButton = $(document.createElement("div")).attr({class: "edit-action rn_edit-button"});
 		let deleteButton = $(document.createElement("div")).attr({class: "edit-action rn_delete-button"});
-		let linkButton = $(document.createElement("div")).attr({class: "edit-action rn_link-button"});
+		let linkButton = $(document.createElement("div")).attr({class: "edit-action rn_link-button", tooltip: "Anyone with this link can view your note."});
 		// let editIcon = $(document.createElement("img")).attr({src: "assets/img/edit.svg"});
 		let trashIcon = $(document.createElement("img")).attr({src: "assets/img/trash.svg"});
 		let linkIcon = $(document.createElement("img")).attr({src: "assets/img/link_icon.svg"});
@@ -221,6 +221,7 @@ $(() => {
             let note = $(e.target).closest(".note");
             let shareCode = note.attr("share_code");
             let shareLink = "https://getrocketnote.com/share?share_url=" + shareCode;
+            $(e.target).attr({tooltip: "Added to clipboard!"});
 
             copyToClipboard(shareLink);
         });
