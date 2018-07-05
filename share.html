@@ -1,0 +1,210 @@
+<html>
+<head>
+    <title>View Shared Notes - Rocket Note</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="The Rocket Note extension allows you to share and view other people's secure notes with just a link.">
+    <meta property="og:image" content="https://cdn.launchaco.com/images/3734cd9a-600f-4127-968c-b26be776d664.svg">
+    <link rel="shortcut icon" href="https://cdn.launchaco.com/images/504fac2e-93a9-472f-9799-8502e6a78b89.png">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://www.launchaco.com/static/AllTemplates.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114958254-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-114958254-1');
+    </script>
+
+    <!-- start ConvertFox JS code-->
+    <script>
+        (function (d, h, w) {
+            var convertfox = w.convertfox = w.convertfox || [];
+            convertfox.methods = ['trackPageView', 'identify', 'track', 'setAppId'];
+            convertfox.factory = function (t) {
+                return function () {
+                    var e = Array.prototype.slice.call(arguments);
+                    e.unshift(t);
+                    convertfox.push(e);
+                    return convertfox;
+                }
+            };
+            for (var i = 0; i < convertfox.methods.length; i++) {
+                var c = convertfox.methods[i];
+                convertfox[c] = convertfox.factory(c)
+            }
+            s = d.createElement('script'), s.src = "//d3sjgucddk68ji.cloudfront.net/convertfox.min.js", s.async = !0, e = d.getElementsByTagName(h)[0], e.appendChild(s), s.addEventListener('load', function (e) {
+            }, !1), convertfox.setAppId("z3gf6leb"), convertfox.trackPageView()
+        })(document, 'head', window);
+    </script>
+    <!-- end ConvertFox JS code-->
+</head>
+
+<body class="font-modern">
+<script>
+    // 2. This code loads the IFrame Player API code asynchronously.
+    var tag = document.createElement('script');
+
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    // 3. This function creates an <iframe> (and YouTube player)
+    //    after the API code downloads.
+    var player;
+
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+            height: '390',
+            width: '640',
+            videoId: null,
+            events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+            }
+        });
+    }
+
+    // 4. The API will call this function when the video player is ready.
+    function onPlayerReady(event) {
+        event.target.playVideo();
+    }
+
+    // 5. The API calls this function when the player's state changes.
+    //    The function indicates that when playing a video (state=1),
+    //    the player should play for six seconds and then stop.
+    var done = false;
+    function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING && !done) {
+            setTimeout(stopVideo, 6000);
+            done = true;
+        }
+    }
+    function stopVideo() {
+        player.stopVideo();
+    }
+</script>
+<div class="red-flat">
+    <!---->
+    <header class="header">
+        <div class="container-lrg">
+            <div class="flex col-12 spread">
+                <a href="/" class="logo ">
+                    <img src="https://cdn.launchaco.com/images/671e3bec-b80a-4ca9-b805-339b1f81d522.svg" alt="Rocket Note Logo">
+                </a>
+                <a href="#main-menu" id="menu" class="menu-toggle">
+                    <b class="nav-link mr0 secondary-color">☰</b>
+                </a>
+                <nav id="main-menu" role="navigation" class="main-menu">
+                    <a href="#" id="main-menu-close" class="menu-close">
+                        <span class="bold">✕</span>
+                    </a>
+                    <a href="./" class="nav-link secondary-color">Home</a>
+                    <a href="./notes" class="nav-link secondary-color" id="nav-notes" style="display: none;">My Notes</a>
+                    <a href="./pricing" class="nav-link secondary-color">Pricing</a>
+                    <a href="./FAQ" class="nav-link primary-color">FAQ</a>
+                    <a href="http://blog.getrocketnote.com" class="nav-link secondary-color">Blog</a>
+                    <a href="javascript:void(0);" class="nav-link secondary-color login-button" id="login-button" style="display: none;">Log In</a>
+                    <a href="javascript:void(0);" class="nav-link secondary-color logout-button" id="logout-button" style="display: none;">Log Out</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <section class="section">
+        <div class="container mb40">
+            <div class="col-12 text-center">
+                <h1 class="heading-lrg primary-color ">Shared Note</h1>
+                <h2 class="subheading secondary-color mt20 ">You are viewing a note that was shared with you.</h2>
+                <!---->
+            </div>
+        </div>
+        <!---->
+    </section>
+</div>
+<section id="faq-1" class="section red-white">
+    <div class="container">
+        <div class="col-12 text-center">
+            <h3 class="heading primary-color ">
+                Here's a cool note that your friend shared with you. :)
+            </h3>
+            <!---->
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-12 mt40" style="text-align:center;">
+            <div id="player"></div>
+            <div id="note-content"></div>
+        </div>
+    </div>
+</section>
+
+<section id="coupon-bar">
+    <span>Subscribe now to apply 50% for life from Product Hunt!</span> 	<div class="close-btn">x</div>
+</section>
+
+<footer id="footer-2" class="section text-center red-accent black-background">
+    <div class="container col-12">
+        <!---->
+        <nav class="mb20 mt20">
+            <a href="/FAQ" class="nav-link secondary-color">FAQ</a>
+            <a href="/keyboard-shortcuts" class="nav-link secondary-color">Keyboard Shortcuts</a>
+            <a href="/changelog" class="nav-link secondary-color">Changelog</a>
+            <a target="_blank" href="https://chrome.google.com/webstore/detail/rocket-note/hemjflepggljigpcaneoeldgipbpcbmg" class="nav-link secondary-color">Chrome Listing</a>
+            <a target="_blank" href="/sitemap.xml" class="nav-link secondary-color">Sitemap</a>
+            <a target="_blank" href="/terms-of-service" class="nav-link secondary-color">Terms of Service</a>
+            <a target="_blank" href="/privacy-policy" class="nav-link secondary-color">Privacy</a>
+        </nav>
+        <div>
+            <a href="mailto:hey@getrocketnote.com" target="_blank" class="socialicons accent-bg email"></a>
+            <a href="https://youtube.com/straighttoweb" target="_blank" class="socialicons accent-bg youtube"></a>
+        </div>
+        <div class="mt20">
+            <span class="span secondary-color">©</span>
+            <span class="span secondary-color">Rocket Note 2018.</span>
+        </div>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<script type="text/javascript" src="identity.js"></script>
+<script type="text/javascript" src="extension-installed-check.js"></script>
+<script defer>
+    $(function() {
+        document.getElementById("player").style.display = "none";
+        let playerSetup = setInterval(clearIntervalIfReady, 300);
+
+        function clearIntervalIfReady() {
+            if (document.getElementById("player").src === 'https://www.youtube.com/embed/null?enablejsapi=1&widgetid=1') {
+                setVideoIdFromShareUrl();
+                document.getElementById("player").style.display = "inline-block";
+            } else {
+                clearInterval(playerSetup);
+            }
+        }
+
+        function setVideoIdFromShareUrl() {
+            $.get('https://api.getrocketnote.com/v1/notes/share?share_url=' + getParameterByName('share_url'), function(result) {
+                document.getElementById("player").src = "https://www.youtube.com/embed/" + result[0].videoId + "?enablejsapi=1&widgetid=1&start=" + result[0].timestamp;
+                window.note = result[0];
+                $("#note-content").text(window.note.content);
+            });
+        }
+
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+    });
+</script>
+</body>
+</html>
