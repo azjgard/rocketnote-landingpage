@@ -195,6 +195,7 @@ $(() => {
 
 		// editButton.append(editIcon);
 		deleteButton.append(trashIcon);
+		linkButton.append(linkIcon);
 		// editActions.append([editButton, deleteButton]);
 		editActions.append(deleteButton);
 		editActions.append(linkButton);
