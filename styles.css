@@ -188,6 +188,10 @@ code {
 	opacity: .5;
 }
 
+.rn_link-button:hover {
+	opacity: .8;
+}
+
 .edit-action img {
 	height: 22px;
 	left: 50%;
@@ -259,6 +263,10 @@ code {
 
 #note-share-date[tooltip]:hover:before {
 	transform: translate(-50%, 10px);
+}
+
+.rn_link-button[tooltip]:hover:before {
+	transform: translate(-50%, -56px);
 }
 
 .filter-button {
