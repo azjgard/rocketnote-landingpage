@@ -187,7 +187,7 @@ $(() => {
 	const addEditActions = noteElements => {
 		let editActions = $(document.createElement("div")).addClass("edit-actions");
 		let editButton = $(document.createElement("div")).attr({class: "edit-action rn_edit-button"});
-		let deleteButton = $(document.createElement("div")).attr({class: "edit-action rn_delete-button"});
+		let deleteButton = $(document.createElement("div")).attr({class: "edit-action rn_delete-button", tooltip: "Delete note. This cannot be undone."});
 		let linkButton = $(document.createElement("div")).attr({class: "edit-action rn_link-button", tooltip: "Anyone with this link can view your note."});
 		// let editIcon = $(document.createElement("img")).attr({src: "assets/img/edit.svg"});
 		let trashIcon = $(document.createElement("img")).attr({src: "assets/img/trash.svg"});
