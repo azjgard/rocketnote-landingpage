@@ -13,7 +13,7 @@ $(function() {
 
     function setVideoIdFromShareUrl() {
         $.get('https://api.getrocketnote.com/v1/notes/share?share_url=' + getParameterByName('share_url'), function(result) {
-            $("#player").attr("src", "https://www.youtube.com/embed/" + result[0].videoId + "?enablejsapi=1&widgetid=1&start=" + result[0].timestamp + "&autoplay=1&enable_js=1");
+            $("#player").attr("src", "https://www.youtube.com/embed/" + result[0].videoId + "?enablejsapi=1&widgetid=1&start=" + result[0].timestamp + "&autoplay=1&enable_js=1&rel=0");
             window.note = result[0];
             $("#note-share-content").text(formatTimestamp(window.note.timestamp) + " " + window.note.content);
             $("#sharer-name").text(window.note.meta.userChannel);

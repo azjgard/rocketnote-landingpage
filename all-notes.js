@@ -195,10 +195,12 @@ $(() => {
 
 		// editButton.append(editIcon);
 		deleteButton.append(trashIcon);
-		linkButton.append(linkIcon);
-		// editActions.append([editButton, deleteButton]);
+        // editActions.append([editButton, deleteButton]);
 		editActions.append(deleteButton);
-		editActions.append(linkButton);
+		if (noteElements.attr("share_code") !== "undefined") {
+            linkButton.append(linkIcon);
+            editActions.append(linkButton);
+        }
 		noteElements.append(editActions);
 	};
 
