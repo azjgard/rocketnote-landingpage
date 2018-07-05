@@ -221,7 +221,7 @@ $(() => {
             let note = $(e.target).closest(".note");
             let shareCode = note.attr("share_code");
             let shareLink = "https://getrocketnote.com/share?share_url=" + shareCode;
-            $(e.target).closest(".rn_link-button").attr({tooltip: "Added to clipboard!"});
+            $(e.target).closest(".rn_link-button").attr({tooltip: "Copied to clipboard!"});
 
             copyToClipboard(shareLink);
         });

@@ -266,7 +266,7 @@ code {
 }
 
 .rn_link-button[tooltip]:hover:before {
-	transform: translate(-40px, -56px);
+	transform: translate(-40px, -65px);
 }
 
 .filter-button {
