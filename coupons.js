@@ -1,7 +1,5 @@
 $(function() {
     let couponCode = getParameterByName("coupon_code") || Cookies.get("coupon_code") || "";
-    console.log(couponCode);
-
     if (couponCode.length > 0) {
         Cookies.set("coupon_code", couponCode);
     }
