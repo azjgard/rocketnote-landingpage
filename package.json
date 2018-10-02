@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/azjgard/rocketnote-landingpage/issues"
   },
-  "homepage": "https://github.com/azjgard/rocketnote-landingpage#readme"
+  "homepage": "https://github.com/azjgard/rocketnote-landingpage#readme",
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  }
 }

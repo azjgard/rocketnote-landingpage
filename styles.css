@@ -15,6 +15,57 @@
 	margin-top: -400px;
 }
 
+.pricing #feature-1 {
+	border-top: 0;
+	margin-bottom: 0;
+	margin-top: -60px;
+	padding-top: 80px;
+	padding-bottom: 80px;
+}
+
+.gradient-separator:before {
+	background: #457bff;
+	background: -moz-linear-gradient(right, #e41e35 0%, #4791df 200%);
+	background: -webkit-linear-gradient(right, #e41e35 0%, #4791df 200%);
+	background: linear-gradient(right, #e41e35 0%, #4791df 200%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e41e35', endColorstr='#4791df',GradientType=0 );
+	border-radius: 2px;
+	content: '';
+	height: 4px;
+	left: 50%;
+	position: absolute;
+	top: 0;
+	transform: translateX(-50%);
+	width: 175px;
+}
+
+.pricing #feature-1 p {
+	font-size: 16px;
+}
+
+.icon svg.bigger {
+	max-height: 55%;
+	max-width: 55%;
+}
+
+.gradient-bg {
+	background: #e41e35; /* Old browsers */
+	background: -moz-linear-gradient(top, #e41e35 0%, #4791df 200%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #e41e35 0%, #4791df 200%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #e41e35 0%, #4791df 200%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e41e35', endColorstr='#4791df',GradientType=0 ); /* IE6-9 */
+	height: 100px;
+	width: 100px;
+}
+
+.gradient-bg svg.svg-fill {
+	fill: #fefefe;
+}
+
+.mb60 {
+	margin-bottom: 60px;
+}
+
 #feature-2 {
 	padding-bottom: 80px;
 	padding-top: 50px;
@@ -515,6 +566,10 @@ label[for="yearly"]::after {
 .note-share-date {
 	color: #666666;
 	font-size: 14px;
+}
+
+.text-center {
+	text-align: center;
 }
 
 /*=== MEDIA QUERIES ===*/
