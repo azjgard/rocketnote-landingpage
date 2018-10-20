@@ -9,13 +9,13 @@
 
     $("input[name='selected-service']").change(function(e) {
         if ($(e.target).attr('id') === 'yearly') {
-            $("#unlimited-price").text("40");
+            $("#unlimited-price").text("12");
             $(".duration").text("Yearly");
-            $("#checkout-unlimited").attr("data-product", "531766");
+            $("#checkout-unlimited").attr("data-product", "542625");
         } else {
-            $("#unlimited-price").text("5");
+            $("#unlimited-price").text("2");
             $(".duration").text("Monthly");
-            $("#checkout-unlimited").attr("data-product", "531765");
+            $("#checkout-unlimited").attr("data-product", "542624");
         }
     });
 
